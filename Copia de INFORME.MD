@@ -1,5 +1,4 @@
 
-
 ---
 
 ### Formato de entrega de laboratorios
