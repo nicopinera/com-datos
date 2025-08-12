@@ -70,6 +70,12 @@ El espectro electromagnético hasta el momento se ha podido conocer algunas de s
 
 Para nuestra onda electromagnetica descripta en la grafica, su longitud de onda es de $\lambda=60*10^{-3}[m]$ y frecuencia $f=5[GHz]$ pertenece a la banda de las **Microondas** las cuales se utilizan en hornos microondas, redes Wi-Fi, radares y sistemas de comunicación por satélite. (capaz se puede desarrollar un poco mas)
 
+En comunicaciones de datos, los dispositivos que operan en la banda de microondas incluyen principalmente enlaces de microondas punto a punto, sistemas de radio por microondas con frecuencia modulada y unidades móviles de microondas. Estos dispositivos utilizan antenas, transmisores, receptores y otros componentes para transmitir datos a través de ondas electromagnéticas en frecuencias de microondas. Por ejemplo:
+* Enlaces de microondas punto a punto
+* Sistemas de radio por microondas con frecuencia modulada
+* Unidades móviles de microondas
+
+
 
 ---
 
