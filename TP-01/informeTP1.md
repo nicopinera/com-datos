@@ -58,6 +58,19 @@ Por ende, podemos calcular la frecuencia $f$:
 
 $f = \frac{c}{\lambda} = \frac{3 * 10^8}{60 * 10^{-3}} = 5000000000 [Hz] = 5*10^9 [Hz] = 5[GHz]$
 
+El espectro electromagnético es la distribución de energías de las radiaciones electromagnéticas. Se puede expresar en términos de la longitud de onda y frecuencias de las radiaciones. Se extiende desde las radiaciones con menor longitud de onda (los rayos gamma) hasta las de mayor longitud de onda (las ondas de radio). [1]
+
+Se compone de diversos subrangos o porciones, cuyos límites no son del todo definidos y tienden a superponerse. Cada franja del espectro se distingue de las otras en el comportamiento de sus ondas durante la emisión, transmisión y absorción, así como en sus aplicaciones prácticas.
+
+Las características de dicha distribución dependen de la frecuencia o la longitud de onda de las oscilaciones, así como de su energía. Las tres cantidades están asociadas entre sí: a un dada una longitud de onda le corresponde una frecuencia y una energía determinadas. 
+
+El espectro electromagnético hasta el momento se ha podido conocer algunas de sus regiones, conocidas como bandas o segmentos. Estas son:
+
+![Espectro Electromagnetico](/TP-01/img/emspecsmall.jpg)
+
+Para nuestra onda electromagnetica descripta en la grafica, su longitud de onda es de $\lambda=60*10^{-3}[m]$ y frecuencia $f=5[GHz]$ pertenece a la banda de las **Microondas** las cuales se utilizan en hornos microondas, redes Wi-Fi, radares y sistemas de comunicación por satélite. (capaz se puede desarrollar un poco mas)
+
+
 ---
 
 ## Conclusiones
@@ -65,7 +78,7 @@ $f = \frac{c}{\lambda} = \frac{3 * 10^8}{60 * 10^{-3}} = 5000000000 [Hz] = 5*10^
 
 ## Referencias
 
-[1] Consultar [Normas APA](https://normas-apa.org/referencias/)
+[1] Consultar [Espectro electromagentico](https://concepto.de/espectro-electromagnetico/)
 
 [2] ...
 
