@@ -85,6 +85,8 @@ La línea roja que se puede ver en nuestra figura representa la atenuación de l
 
 Claramente sí podemos observar los efectos de la atenuación en la vida cotidiana como señal de Wi-Fi, cuando te alejas de nuestro router, la intensidad de la señal de Wi-Fi en nuestro teléfono o computadora disminuye. Esto se manifiesta en una velocidad de conexión más lenta, o incluso en la pérdida total de la conexión. Este fenomeno tambien afecta a los diferentes tipos de redes y transmiciones como la de cable coaxial, telefono celular y fibra optica [2]  
 
+---
+
 A continuacion, se realizara un analisis del siguiente sistema de comunicacion.
 ![Sistema](/TP-01/img/image2.png)
 
@@ -95,6 +97,9 @@ Si nosotros quisieramos envial la letra "r" por medio de una señal digital en u
 ![r-binario](/TP-01/img/r-binario.png)  
 
 Y el mejor momento para muestrear la señal seria a la mitad del periodo de nuestra señal de clock, ya que en ese instante la tension que representaria nuestro 1 o 0 logico ya se encuentra establecida.
+
+---
+
 
 ---
 
