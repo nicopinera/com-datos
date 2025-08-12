@@ -56,7 +56,7 @@ Para este grafico podemos saber que $\lambda = 120 - 60 = 60 [mm] = 60*10^{-3} [
 
 Por ende, podemos calcular la frecuencia $f$: 
 
-$$f = \frac{c}{\lambda} = \frac{3*10^8}{60*10^{-3}} = 5000000000 [Hz] = 5*10^9 [Hz]$$
+$f = \frac{c}{\lambda} = \frac{3 * 10^8}{60 * 10^{-3}} = 5000000000 [Hz] = 5*10^9 [Hz] = 5[GHz]$
 
 ---
 
