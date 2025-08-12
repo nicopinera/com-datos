@@ -75,7 +75,15 @@ En comunicaciones de datos, los dispositivos que operan en la banda de microonda
 * Sistemas de radio por microondas con frecuencia modulada
 * Unidades móviles de microondas
 
+La línea roja que se puede ver en nuestra figura representa la atenuación de la onda electromagnética, la cual es la pérdida de intensidad de la señal a medida que se propaga a través del espacio. Este fenómeno se debe a varios factores, como la dispersión, la absorción y la reflexión. En la imagen, se ve cómo la amplitud de la onda, va disminuyendo a medida que la onda viaja por el espacio. Es importante destacar que la atenuación no solo afecta la potencia de la señal, sino que también puede distorsionarla y degradar su calidad, lo que se traduce en problemas de conexión, pérdida de datos y un rendimiento general más lento.
 
+* Reducción de la Intensidad de la Señal
+* Aumento de la Tasa de Error de Bits (BER)
+* Disminución de la Velocidad de Datos
+* Inestabilidad de la Conexión y Desconexione
+* Calidad Degradada de Audio y Video
+
+Claramente sí podemos observar los efectos de la atenuación en la vida cotidiana como señal de Wi-Fi, cuando te alejas de nuestro router, la intensidad de la señal de Wi-Fi en nuestro teléfono o computadora disminuye. Esto se manifiesta en una velocidad de conexión más lenta, o incluso en la pérdida total de la conexión. Este fenomeno tambien afecta a los diferentes tipos de redes y transmiciones como la de cable coaxial, telefono celular y fibra optica [2]  
 
 ---
 
@@ -84,9 +92,8 @@ En comunicaciones de datos, los dispositivos que operan en la banda de microonda
 
 ## Referencias
 
-[1] Consultar [Espectro electromagentico](https://concepto.de/espectro-electromagnetico/)
-
-[2] ...
+[1] [Espectro electromagentico](https://concepto.de/espectro-electromagnetico/)  
+[2] [Atenuacion en Redes](https://opticanaranjo.com.ar/atenuaciones-en-redes-industriales-opticas/)
 
 [3] ...
 
