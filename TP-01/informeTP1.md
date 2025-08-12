@@ -39,6 +39,7 @@
 
 ## Resultados
 
+### Consigna 1
 A partir del siguiente grafico de una onda electromagentica se realizara un repaso de ellas, modulacion/demodulacion, señales de tiempos continuo, señales de tiempo discreto.
 
 ![Imagen1](/TP-01/img/image.png)
@@ -87,19 +88,24 @@ Claramente sí podemos observar los efectos de la atenuación en la vida cotidia
 
 ---
 
+### Consigna 2
+
 A continuacion, se realizara un analisis del siguiente sistema de comunicacion.
+
 ![Sistema](/TP-01/img/image2.png)
 
 Como se observa, nuestro sistema esta formado por un transmisor y un receptos. Nuestro transmisor es el encargado de enviar la informacion y ademas una señal de clock para podes sincronizar la comunicacion. Dado que la comunicacion se da en un solo sentido entonces se esta realizando una transmision de tipo **sincronica** y de modo **simple** o **unidireccional** [3] [4]. Si nosotros queremos transmitir de manera rapida y bidireccional, tendriamos que cambiar el modo de transmision, a un modo **Full duplex** permitiendo que los datos viajen en ambas direcciones al mismo tiempo, ademas al ser **sincronica** permite una alta eficiencia y velocidad para enviar datos de manera continua.
 
-Si nosotros quisieramos envial la letra "r" por medio de una señal digital en una comunicacion UART deberiamos buscar su representacion en ASCII que es el numero $114$ y convertirlo a binario, lo que resulta la siguiente cadena $01110010$ y lo que se tranmsitiria seria:
+Si nosotros quisieramos envial la letra "r" por medio de una señal digital en una comunicacion UART deberiamos buscar su representacion en ASCII que es el numero $114$ y convertirlo a binario, lo que resulta la siguiente cadena $01110010$ y lo que se tranmsitiria seria :
 
 ![r-binario](/TP-01/img/r-binario.png)  
 
 Y el mejor momento para muestrear la señal seria a la mitad del periodo de nuestra señal de clock, ya que en ese instante la tension que representaria nuestro 1 o 0 logico ya se encuentra establecida.
+[5]
 
 ---
 
+### Consiga 3
 
 ---
 
@@ -112,4 +118,4 @@ Y el mejor momento para muestrear la señal seria a la mitad del periodo de nues
 [2] [Atenuacion en Redes](https://opticanaranjo.com.ar/atenuaciones-en-redes-industriales-opticas/)  
 [3] [Comunicacion Sincronica y Asincronica](https://isaaclp.wordpress.com/redes-i-programa-de-la-materia/unidad-i/interfaces-de-comunicaciones/transmision-sincrona-y-asincrona/)  
 [4] [Modos de comunicacion](https://www.scaler.com/topics/computer-network/transmission-modes-computer-networks/)  
-[4] [Codigo ASCII](https://elcodigoascii.com.ar/codigos-ascii/letra-r-minuscula-codigo-ascii-114.html)  
+[5] [Codigo ASCII](https://elcodigoascii.com.ar/codigos-ascii/letra-r-minuscula-codigo-ascii-114.html)  
