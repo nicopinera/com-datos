@@ -22,6 +22,7 @@
  
 - **Información de contacto**: 
   - nicolas.pinera@mi.unc.edu.ar  
+  - julian.krede@mi.unc.edu.ar
 
 ---
 
