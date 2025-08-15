@@ -1,70 +1,84 @@
 # Comandos de git
+
 A continuacion se listaran los comandos mas utiles y comunes para trabajar con git y github
 
 1. Agregar elementos o archivos creados. El punto significa que sea agregaran todos los elementos creados, si se desea agregar uno solo se cambia el punto por el nombre del archivo
-``` bash
+
+```bash
 git add .
 ```
 
 2. Realizar un commit: sirve para agregar tu contenido con un mensaje descriptivo de la tarea realizada
-``` bash
+
+```bash
 git commit -m "Actualizacion TP1"
 ```
 
 3. Ver el estado de los archivos en el repositorio: muestra los cambios realizados y los archivos que están listos para ser añadidos o confirmados
-``` bash
+
+```bash
 git status
 ```
 
 4. Ver el historial de commits: muestra una lista de los commits realizados en el repositorio
-``` bash
+
+```bash
 git log
 ```
 
 5. Clonar un repositorio: copia un repositorio remoto a tu máquina local
-``` bash
+
+```bash
 git clone <url-del-repositorio>
 ```
 
 6. Actualizar el repositorio local con los cambios del repositorio remoto
-``` bash
+
+```bash
 git pull
 ```
 
 7. Subir los cambios locales al repositorio remoto
-``` bash
+
+```bash
 git push
 ```
 
 ## Comandos para trabajar con ramas
 
 1. Crear una nueva rama
-``` bash
+
+```bash
 git branch <nombre-de-la-rama>
 ```
 
 2. Cambiar a una rama existente
-``` bash
+
+```bash
 git checkout <nombre-de-la-rama>
 ```
 
 3. Crear y cambiar a una nueva rama en un solo paso
-``` bash
+
+```bash
 git checkout -b <nombre-de-la-rama>
 ```
 
 4. Listar todas las ramas
-``` bash
+
+```bash
 git branch
 ```
 
 5. Fusionar una rama con la rama actual
-``` bash
+
+```bash
 git merge <nombre-de-la-rama>
 ```
 
 6. Eliminar una rama
-``` bash
+
+```bash
 git branch -d <nombre-de-la-rama>
 ```
 
@@ -89,11 +103,13 @@ Una pull request (PR) es una solicitud para fusionar los cambios de una rama en 
 Cuando una pull request se fusiona y la rama asociada se elimina en GitHub, es importante limpiar las ramas locales para evitar confusión. Los pasos son:
 
 1. Verificar que estás en otra rama (por ejemplo, `main`):
+
    ```bash
    git checkout main
    ```
 
 2. Eliminar la rama local que ya no existe en el remoto:
+
    ```bash
    git branch -d <nombre-de-la-rama>
    ```
@@ -110,6 +126,7 @@ Esto asegura que tu repositorio local esté sincronizado con el remoto y no cont
 Cuando dos ramas tienen cambios en las mismas líneas de un archivo, Git genera un conflicto al intentar fusionarlas. Para resolverlo:
 
 1. Realiza el merge que genera el conflicto:
+
    ```bash
    git merge <nombre-de-la-rama>
    ```
@@ -119,6 +136,7 @@ Cuando dos ramas tienen cambios en las mismas líneas de un archivo, Git genera 
 3. Edita los archivos para resolver los conflictos, eligiendo o combinando los cambios necesarios.
 
 4. Una vez resueltos, añade los archivos al área de preparación:
+
    ```bash
    git add <archivo-en-conflicto>
    ```
@@ -133,31 +151,37 @@ Cuando dos ramas tienen cambios en las mismas líneas de un archivo, Git genera 
 Las etiquetas se utilizan para marcar puntos específicos en el historial de commits, como versiones de un proyecto.
 
 1. Crear una etiqueta ligera:
+
    ```bash
    git tag <nombre-de-la-etiqueta>
    ```
 
 2. Crear una etiqueta anotada (recomendada para incluir información adicional como mensajes):
+
    ```bash
    git tag -a <nombre-de-la-etiqueta> -m "Mensaje de la etiqueta"
    ```
 
 3. Listar todas las etiquetas:
+
    ```bash
    git tag
    ```
 
 4. Subir una etiqueta al repositorio remoto:
+
    ```bash
    git push origin <nombre-de-la-etiqueta>
    ```
 
 5. Subir todas las etiquetas al repositorio remoto:
+
    ```bash
    git push --tags
    ```
 
 6. Eliminar una etiqueta local:
+
    ```bash
    git tag -d <nombre-de-la-etiqueta>
    ```
@@ -166,4 +190,3 @@ Las etiquetas se utilizan para marcar puntos específicos en el historial de com
    ```bash
    git push origin --delete <nombre-de-la-etiqueta>
    ```
-
