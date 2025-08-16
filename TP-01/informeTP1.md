@@ -133,11 +133,10 @@ Ademas de esta modulacion digital, existen otras maneras las cuales son:
 ![Modulaciones Digitales](/TP-01/img/Modulacion-digital.png)
 
 ---
+
 ### Consigna 4
 
 Utilizando el software de Packet Tracer se realizo la simulacion pedida en el enunciado. Una vez configurado el Router Wireless tanto su IP, nombre de red y contraseña, podemos ver que el mismo trabaja en el canal de frecuencia $2.4[GHz]$ el cual pertenece a la region de **microondas**. Dentro de esta región, opera en la banda **ISM** (Industrial, Scientific and Medical), que va de 2.400 GHz a 2.4835 GHz. Esta es una banda de frecuencia de uso libre y no requiere licencia para la mayoría de las aplicaciones. [7]
-
-
 
 ---
 
