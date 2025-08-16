@@ -1,4 +1,4 @@
-# Trabajo Practico N1 - Comunicaciones 101: Repaso de fundamentos esenciales e introduccion a Packet Tracer
+# Trabajo Practico N1 - Repaso de fundamentos esenciales e introduccion a Packet Tracer
 
 ## Nombres
 
@@ -134,6 +134,12 @@ Ademas de esta modulacion digital, existen otras maneras las cuales son:
 
 ---
 
+### Consigna 4
+
+Utilizando el software de Packet Tracer se realizo la simulacion pedida en el enunciado. Una vez configurado el Router Wireless tanto su IP, nombre de red y contraseña, podemos ver que el mismo trabaja en el canal de frecuencia $2.4[GHz]$ el cual pertenece a la region de **microondas**. Dentro de esta región, opera en la banda **ISM** (Industrial, Scientific and Medical), que va de 2.400 GHz a 2.4835 GHz. Esta es una banda de frecuencia de uso libre y no requiere licencia para la mayoría de las aplicaciones. [7]
+
+---
+
 ## Conclusiones
 
 ## Referencias
@@ -143,4 +149,5 @@ Ademas de esta modulacion digital, existen otras maneras las cuales son:
 [3] [Comunicacion Sincronica y Asincronica](https://isaaclp.wordpress.com/redes-i-programa-de-la-materia/unidad-i/interfaces-de-comunicaciones/transmision-sincrona-y-asincrona/)  
 [4] [Modos de comunicacion](https://www.scaler.com/topics/computer-network/transmission-modes-computer-networks/)  
 [5] [Codigo ASCII](https://elcodigoascii.com.ar/codigos-ascii/letra-r-minuscula-codigo-ascii-114.html)  
-[6] [Modulaciones](https://abcxperts.com/las-modulaciones-digitales-como-funcionan-y-por-que-son-importantes/?srsltid=AfmBOop7KtQXNy-PC3_qXwbZskX8POyfhIWRIeygYYEaBo7HBzDKwIab)
+[6] [Modulaciones](https://abcxperts.com/las-modulaciones-digitales-como-funcionan-y-por-que-son-importantes/?srsltid=AfmBOop7KtQXNy-PC3_qXwbZskX8POyfhIWRIeygYYEaBo7HBzDKwIab)  
+[7] [Banda ISM](https://www.data-alliance.net/es/banda-de-frecuencias-ism-y-su-distribuci%C3%B3n)
