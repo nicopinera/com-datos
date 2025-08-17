@@ -4,7 +4,7 @@
 
 - Nicolas Piñera
 - Julian Krede
-- Noelia
+- Noelia Valarezo
 
 **Nombre del grupo**: Puerto1337
 
@@ -23,7 +23,7 @@
 - **Información de contacto**:
   - [nicolas.pinera@mi.unc.edu.ar](mailto:nicolas.pinera@mi.unc.edu.ar)
   - [julian.krede@mi.unc.edu.ar](mailto:julian.krede@mi.unc.edu.ar)
-
+  - [noelia.valarezo@mi.unc.edu.ar](mailto:noelia.valarezo@mi.unc.edu.ar)
 ---
 
 ## Resumen
