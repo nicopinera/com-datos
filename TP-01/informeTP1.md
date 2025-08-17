@@ -1,4 +1,3 @@
-
 # Trabajo Practico N1 - Repaso de fundamentos esenciales e introduccion a Packet Tracer
 
 ## Nombres
@@ -15,11 +14,11 @@
 
 ### Profesores
 
-* Henn, Santiago Martin
+- Henn, Santiago Martin
 
-* Oliva Cuneo, Facundo
+- Oliva Cuneo, Facundo
 
-* Solinas, Miguel Ángel
+- Solinas, Miguel Ángel
 
 **Fecha:** 18/8/2025
 
@@ -27,12 +26,11 @@
 
 ## Información de los autores
 
-* **Información de contacto**:
+- **Información de contacto**:
 
-  * [nicolas.pinera@mi.unc.edu.ar](mailto:nicolas.pinera@mi.unc.edu.ar)  
-  * [julian.krede@mi.unc.edu.ar](mailto:julian.krede@mi.unc.edu.ar)
-  * email noe
-
+  - [nicolas.pinera@mi.unc.edu.ar](mailto:nicolas.pinera@mi.unc.edu.ar)
+  - [julian.krede@mi.unc.edu.ar](mailto:julian.krede@mi.unc.edu.ar)
+  - email noe
 
 ---
 
@@ -60,11 +58,9 @@ $$c = \lambda * f$$
 
 Siendo:
 
-
-* $c$: Velocidad de la luz en el vacío (aproximadamente $3*10^8 [\frac{m}{s}]$)
-* $\lambda$: Longitud de onda (en metros)
-* $f$: Frecuencia (en hertz)
-
+- $c$: Velocidad de la luz en el vacío (aproximadamente $3*10^8 [\frac{m}{s}]$)
+- $\lambda$: Longitud de onda (en metros)
+- $f$: Frecuencia (en hertz)
 
 Para este grafico podemos saber que $\lambda = 120 - 60 = 60 [mm] = 60*10^{-3} [m]$.
 
@@ -84,17 +80,16 @@ El espectro electromagnético hasta el momento se ha podido conocer algunas de s
 
 Para nuestra onda electromagnetica descripta en la grafica, su longitud de onda es de $\lambda=60*10^{-3}[m]$ y frecuencia $f=5[GHz]$ pertenece a la banda de las **Microondas** las cuales se utilizan en hornos microondas, redes Wi-Fi, radares y sistemas de comunicación por satélite. (capaz se puede desarrollar un poco mas)
 
-
 En esa franja trabajan muchos dispositivos, tanto de uso cotidiano como industriales o militares, algunos de estos son:
 
-* Hornos microondas (~2,45 GHz).
-* Dispositivos que cuentan con los siguientes tipos de comunicación inalámbrica:
-  * Wi-Fi (2,4 GHz y 5 GHz, algunas variantes hasta 6 GHz).
-  * Bluetooth (2,4 GHz)
-  * Telefonía móvil (algunas bandas de 1–6 GHz y también 24–40 GHz en 5G).
-  * Enlaces de microondas terrestres punto a punto.
-* Radares como por ejemplo: radares meteorológicos, de aviación y militares.
-* Radiotelescopios.
+- Hornos microondas (~2,45 GHz).
+- Dispositivos que cuentan con los siguientes tipos de comunicación inalámbrica:
+  - Wi-Fi (2,4 GHz y 5 GHz, algunas variantes hasta 6 GHz).
+  - Bluetooth (2,4 GHz)
+  - Telefonía móvil (algunas bandas de 1–6 GHz y también 24–40 GHz en 5G).
+  - Enlaces de microondas terrestres punto a punto.
+- Radares como por ejemplo: radares meteorológicos, de aviación y militares.
+- Radiotelescopios.
 
 La línea roja que se puede ver en nuestra figura representa la atenuación de la onda electromagnética, la cual es la pérdida de intensidad de la señal a medida que se propaga a través del espacio. Este fenómeno se debe a varios factores, como la dispersión, la absorción y la reflexión. En la imagen, se ve cómo la amplitud de la onda, va disminuyendo a medida que la onda viaja por el espacio. Es importante destacar que la atenuación no solo afecta la potencia de la señal, sino que también puede distorsionarla y degradar su calidad, lo que se traduce en problemas de conexión, pérdida de datos y un rendimiento general más lento.
 
@@ -152,7 +147,6 @@ Ademas de esta modulacion digital, existen otras maneras las cuales son:
 
 ---
 
-
 ### Consiga 4
 
 Al realizar el experimento se observa que el router opera entre las frecuencia de $2,412\, \text{[GHz]}$ y $2,462 \, \text{[GHz]}$ conocida comunmente con la banda de $2,4\, \text{[GHz]}$, esta banda pertenece al espectro de microondas anteriormente mencionado.
@@ -163,7 +157,7 @@ Al realizar el experimento se observa que el router opera entre las frecuencia d
 
 #### Verificación de conectividad entre dispositivos
 
-![ping-pc-a-notebook](/TP-01/img/ping-pc-a-notebook.png)  
+![ping-pc-a-notebook](/TP-01/img/ping-pc-a-notebook.png)
 
 Como se puede observar se enviaron 4 paquetes desde _PC_ a _Notebook_ y este respondió a todos mostrando que hay una conexión establecida entre _PC_ y _Notebook_
 
@@ -184,6 +178,12 @@ Ademas al realizar los experimentos se observó como a medida que el dispositivo
 ---
 
 ## Conclusiones
+
+En este trabajo práctico se realizó un repaso de conceptos fundamentales relacionados con las ondas electromagnéticas, los sistemas de comunicación y las modulaciones digitales. A través de los ejercicios y experimentos realizados, se pudo observar cómo las propiedades de las ondas, como la frecuencia y la longitud de onda, determinan su comportamiento y aplicaciones prácticas.
+
+Además, se analizaron diferentes modos de transmisión y técnicas de modulación, destacando sus ventajas y limitaciones en distintos escenarios. Los experimentos con redes inalámbricas permitieron comprender cómo factores como la atenuación y el alcance afectan la conectividad y el rendimiento de los dispositivos.
+
+En resumen, este trabajo permitió consolidar conocimientos teóricos y prácticos esenciales para el estudio de las comunicaciones de datos, sentando una base sólida para abordar temas más avanzados en la materia.
 
 ## Referencias
 
