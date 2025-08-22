@@ -4,7 +4,7 @@
 
 - Nicolas Piñera
 - Julian Krede
-- Noelia
+- Noelia Valarezo
 
 **Nombre del grupo**: Puerto1337
 
@@ -30,19 +30,25 @@
 
   - [nicolas.pinera@mi.unc.edu.ar](mailto:nicolas.pinera@mi.unc.edu.ar)
   - [julian.krede@mi.unc.edu.ar](mailto:julian.krede@mi.unc.edu.ar)
-  - email noe
+  - [noelia.valarezo@mi.unc.edu.ar](mailto:noelia.valarezo@mi.unc.edu.ar)
 
 ---
 
 ## Resumen
 
-**Palabras clave**:
+En este trabajo práctico se realiza un repaso de los fundamentos esenciales de las comunicaciones de datos, abordando temas como el análisis de ondas electromagnéticas, los modos de transmisión y las principales técnicas de modulación digital. A través de simulaciones en Cisco Packet Tracer se refuerzan los conceptos teóricos y se analizan los efectos de la atenuación, el alcance y la calidad de señal en distintos escenarios de red. El objetivo final es consolidar una base conceptual y práctica para el estudio avanzado de las comunicaciones.
+
+**Palabras clave**: comunicaciones de datos, ondas electromagnéticas, modulación digital, transmisión, atenuación, Packet Tracer
 
 ---
 
 ## Introducción
 
----
+Las comunicaciones de datos son fundamentales en la actualidad, ya que permiten la transmisión eficiente de información a través de diversos medios y tecnologías. Comprender los conceptos básicos de ondas electromagnéticas, modos de transmisión y técnicas de modulación digital es esencial para el diseño y análisis de sistemas de comunicación modernos.
+
+En este trabajo práctico, se revisan estos conceptos teóricos y se aplican mediante simulaciones en Cisco Packet Tracer, lo que permite observar de manera práctica cómo factores como la atenuación, el alcance y la calidad de la señal afectan la conectividad y el rendimiento de las redes.
+
+El objetivo es brindar una visión general que combinee teoría y práctica, fortaleciendo la comprensión de los fundamentos necesarios para el estudio avanzado de las comunicaciones de datos.
 
 ## Resultados
 
