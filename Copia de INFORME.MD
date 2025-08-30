@@ -11,26 +11,26 @@
 
 # Título
 
-**Nombres**  
-_Nombre Apellidos; usar iniciales para el segundo nombre_  
-**Nombre del grupo**, si corresponde  
+**Nombres**
+_Nombre Apellidos; usar iniciales para el segundo nombre_
+**Nombre del grupo**, si corresponde
 
-**Nombre del centro educativo o institución**  
-**Nombre del curso o materia** (para publicaciones de alumnos)  
-**Profesores** (para publicaciones de alumnos)  
-**Fecha** (para publicaciones de alumnos)  
+**Nombre del centro educativo o institución**
+**Nombre del curso o materia** (para publicaciones de alumnos)
+**Profesores** (para publicaciones de alumnos)
+**Fecha** (para publicaciones de alumnos)
 
 ---
 
 ### Información de los autores
- 
-- **Información de contacto**: _correo electrónico_  
+
+- **Información de contacto**: _correo electrónico_
 
 ---
 
 ## Resumen
 
-Un párrafo, sin sangría. Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto. 
+Un párrafo, sin sangría. Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto Escribe aquí tu texto.
 
 **Palabras clave**: primera línea con sangría, _Escribe, aquí, tu texto_
 

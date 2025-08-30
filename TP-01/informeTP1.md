@@ -193,10 +193,10 @@ En resumen, este trabajo permitió consolidar conocimientos teóricos y práctic
 
 ## Referencias
 
-[1] [Espectro electromagentico](https://concepto.de/espectro-electromagnetico/)  
-[2] [Atenuacion en Redes](https://opticanaranjo.com.ar/atenuaciones-en-redes-industriales-opticas/)  
-[3] [Comunicacion Sincronica y Asincronica](https://isaaclp.wordpress.com/redes-i-programa-de-la-materia/unidad-i/interfaces-de-comunicaciones/transmision-sincrona-y-asincrona/)  
-[4] [Modos de comunicacion](https://www.scaler.com/topics/computer-network/transmission-modes-computer-networks/)  
-[5] [Codigo ASCII](https://elcodigoascii.com.ar/codigos-ascii/letra-r-minuscula-codigo-ascii-114.html)  
-[6] [Modulaciones](https://abcxperts.com/las-modulaciones-digitales-como-funcionan-y-por-que-son-importantes/?srsltid=AfmBOop7KtQXNy-PC3_qXwbZskX8POyfhIWRIeygYYEaBo7HBzDKwIab)  
+[1] [Espectro electromagentico](https://concepto.de/espectro-electromagnetico/)
+[2] [Atenuacion en Redes](https://opticanaranjo.com.ar/atenuaciones-en-redes-industriales-opticas/)
+[3] [Comunicacion Sincronica y Asincronica](https://isaaclp.wordpress.com/redes-i-programa-de-la-materia/unidad-i/interfaces-de-comunicaciones/transmision-sincrona-y-asincrona/)
+[4] [Modos de comunicacion](https://www.scaler.com/topics/computer-network/transmission-modes-computer-networks/)
+[5] [Codigo ASCII](https://elcodigoascii.com.ar/codigos-ascii/letra-r-minuscula-codigo-ascii-114.html)
+[6] [Modulaciones](https://abcxperts.com/las-modulaciones-digitales-como-funcionan-y-por-que-son-importantes/?srsltid=AfmBOop7KtQXNy-PC3_qXwbZskX8POyfhIWRIeygYYEaBo7HBzDKwIab)
 [7] [Banda ISM](https://www.data-alliance.net/es/banda-de-frecuencias-ism-y-su-distribuci%C3%B3n)
