@@ -36,7 +36,9 @@
 
 ## Resumen
 
-**Palabras clave**:
+En este trabajo practico se realiza un repaso de diferentes fenomenos que ocurren en las ondas, como el efecto doppler y la interferencia, viendo las caracteristicas principales de ambos fenomenos y como afectan a las diferentes bandas de transmicion. Ademas se ve una explicacion del protocolo Ethernet aplicado en la capa de enlace de datos del modelo OSI y como fue evolucionando.
+
+**Palabras clave**: Efecto doppler, interferencia, bandas de transmicion, Ethernet, protocolos, WireShark, MAC.
 
 ---
 
@@ -128,6 +130,43 @@ El $\text{SNR}$ tiene una relacion directa con el $\text{BER}$, ya que, a mayor 
 ---
 
 ### Consigna 3
+
+Ethernet es un estándar de tecnología de red ampliamente utilizado para conectar dispositivos en una red de área local (LAN) o de área metropolitana (WAN) a través de cable. Su nombre proviene del concepto físico de "éter", el medio hipotético por el que se creía que viajaban las ondas electromagnéticas. A diferencia de las redes inalámbricas (como Wi-Fi), Ethernet ofrece una conexión física cableada, lo que la hace más segura, confiable y con mayor velocidad de transferencia de datos. Sus caracteristicas principales son:
+
+- **Tecnología Cableada:** Utiliza principalmente cables de par trenzado, fibra óptica o, en estándares antiguos, cable coaxial.
+
+- **Velocidad y Fiabilidad:** Proporciona conexiones estables y generalmente más rápidas que las redes inalámbricas. Su naturaleza cableada minimiza la interferencia y las pérdidas de conexión.
+
+- **Estándar IEEE 802.3:** Está regulado por el Instituto de Ingenieros Eléctricos y Electrónicos (IEEE) bajo el protocolo 802.3, lo que garantiza la compatibilidad entre equipos de diferentes fabricantes.
+
+- **Direccionamiento MAC:** Cada dispositivo en una red Ethernet tiene una dirección de control de acceso a medios (MAC) única, que se utiliza para identificar el origen y el destino de las tramas de datos.
+
+Mientras los datos bajan por una pila de protocolos y se transmiten se agregan diversa informacion de protocolos en cada capa. La manera que adopta una porcion de datos en cauqier capa se nomina unidad de datos del protoco (PDU). El nombre de las PDU cambia segun la capa. Para la capa de Enlace de datos del modelo OSI, en la cual esta el protocolo de Ethernet, se llaman **trama**. Los campos de la trama Ethernet (IEEE 802.3) son los siguientes:
+
+- **Preámbulo y Delimitador de inicio de trama:** Se utilizan para la sincronización entre los dispositivos emisor y receptor, señalando el inicio de la trama.
+- **Dirección MAC de Destino**: Contiene la dirección MAC del dispositivo al que se envía la trama. Si esta en la misma red, sera la direccion MAC del dispositivo de destino, si estan en redes distinas, sera la direccion MAC del router o gateway predeterminado.
+- **Dirección MAC de Origen:** Identifica la dirección MAC del dispositivo que envía la trama.
+- **Longitud/Tipo:** Indica la longitud del campo de datos o el tipo de protocolo de capa superior (como IPv4 o IPv6) que se transporta en la trama.
+- **Datos:** Contiene la información real o "carga útil" que se transmite.
+- **Secuencia de Verificación de Trama (FCS):** Es un campo de detección de errores que utiliza un código de redundancia cíclica (CRC) para verificar la integridad de la trama al llegar a su destino.
+
+Diferencias entre Ethernet, Fast Ethernet y Gigabit Ethernet
+La principal diferencia entre los protocolos Ethernet, Fast Ethernet y Gigabit Ethernet radica en la velocidad de transmisión de datos, lo cual ha sido la base de la evolución de la tecnología Ethernet a lo largo de las décadas.
+
+- **Ethernet (Estándar Original):**
+  - *Velocidad:* 10 Mbps.
+  - *Medio:* Originalmente utilizaba cable coaxial, pero evolucionó a par trenzado.
+  - *Uso:* Obsoleto en la mayoría de las redes modernas, pero sentó las bases para los estándares posteriores.
+
+- **Fast Ethernet:**
+  - *Velocidad:* 100 Mbps, diez veces más rápido que el estándar original.
+  - *Medio:* Utiliza cable de par trenzado o fibra óptica.
+  - *Uso:* Fue ampliamente adoptado en la década de 1990 y todavía se utiliza en redes donde no se requiere una alta velocidad.
+
+- **Gigabit Ethernet:**
+  - *Velocidad:* 1000 Mbps o 1 Gbps, diez veces más rápido que Fast Ethernet.
+  - *Medio:* Utiliza cable de par trenzado de Categoría 5e o superior y fibra óptica.
+  - *Uso:* Es el estándar actual para la mayoría de las redes LAN en hogares, oficinas y centros de datos debido a su alta velocidad y su capacidad para manejar aplicaciones que demandan mucho ancho de banda.
 
 ---
 
