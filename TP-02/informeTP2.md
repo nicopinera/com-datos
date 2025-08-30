@@ -87,36 +87,49 @@ Las autoridades que regulan la aviación civil generalmente prohíben transmisio
 
 ![Ruido-Electromagnetico](img/ruido-electromagnetico.png)
 
-En la imagen se puede apreciar como el motor de corriente alterna de un taladro electrico provoca interferencia por ruido aditivo sobre una señal. Los motores electricos de corriente alterna generan corrientes pulsantes al conmutar o variar el flujo, estas corrientes producen campos electromagnéticos variables alrededor del motor y los cables.
+En la imagen se puede apreciar como el motor de corriente alterna de un taladro electrico provoca interferencia electromagentica o intereferencia por ruido aditivo sobre una señal. Los motores electricos de corriente alterna generan corrientes pulsantes al conmutar o variar el flujo, estas corrientes producen campos electromagnéticos variables alrededor del motor y los cables.
 
 Características principales de la interferencia por ruido aditivo:
 
-- Amplio espectro: Suele afectar una amplia gama de frecuencias (ruido de banda ancha), aunque puede ser también selectivo en frecuencia dependiendo de la fuente.
+- *Amplio espectro:* Suele afectar una amplia gama de frecuencias (ruido de banda ancha), aunque puede ser también selectivo en frecuencia dependiendo de la fuente.
 
-- Energía limitada pero superpuesta: Aunque la energía de cada componente de ruido es pequeña, se suma a la señal deseada, dificultando su detección o decodificación.
+- *Energía limitada pero superpuesta:* Aunque la energía de cada componente de ruido es pequeña, se suma a la señal deseada, dificultando su detección o decodificación.
 
-- Origen eléctrico o electromagnético: Puede provenir de motores, equipos electrónicos, descargas atmosféricas, transmisión de radio cercana, etc.
+- *Origen eléctrico o electromagnético:* Puede provenir de motores, equipos electrónicos, descargas atmosféricas, transmisión de radio cercana, etc.
 
-- Impacto en la relación señal/ruido ($\text{SNR}$): Reduce la $\text{SNR}$, lo que aumenta la probabilidad de errores en sistemas digitales o distorsiona señales analógicas.
+- *Impacto en la relación señal/ruido ($\text{SNR}$):* Reduce la $\text{SNR}$, lo que aumenta la probabilidad de errores en sistemas digitales o distorsiona señales analógicas.
 
-Influencia del la interferencia por ruido sobre:
+La vulnerabilidad de las bandas de transmisión a la interferencia electromagnética (IEM) no depende tanto de la banda en sí, sino de una combinación de factores como la frecuencia, la potencia de transmisión, el ancho de banda, la atenuación y, lo más importante, el entorno electromagnético en el que operan.
 
-- ASK: Modifica directamente la amplitud percibida por el receptor. Esto puede hacer que un “0” se interprete como un “1” y viceversa.\
-  En qué medida: Muy sensible. Incluso ruido pequeño puede causar errores de bit, especialmente en canales con baja SNR.
+**Bandas más afectadas por Interferencia:** Estas bandas son propensas porque o bien están muy congestionadas, son utilizadas por dispositivos de baja potencia, o son naturalmente susceptibles a fuentes de ruido omnipresentes.
 
-- FSK: Tiene poca influencia sobre la frecuencia, por lo que los bits se detectan correctamente. FSK es muy resistente frente a ruido de amplitud, por eso se usa en canales ruidosos.
+- *Bandas ISM de 2.4 GHz y 900 MHz:* Son las bandas más afectadas por la interferencia debido a la congestión. Son bandas de uso libre por lo que una enorme cantidad de dispositivos compiten por el mismo espectro.
 
-- QPSK: Desplaza los puntos de la constelación, aumentando la probabilidad de que el receptor decida el símbolo incorrecto.
-  QPSK es moderadamente sensible, si bien es mucho mas resistente que ASK, puede fallar si la SNR baja demasiado.
+- *Bandas de Frecuencias Medias y Bajas:* Son extremadamente susceptibles al ruido atmosférico (tormentas eléctricas) y al ruido industrial (motores eléctricos, líneas de potencia, sistemas de encendido de vehículos). La propagación por ionosfera también es muy variable e impredecible.
 
-- QAM: Mueve los símbolos en la constelación, especialmente en la dirección de amplitud, causando errores de símbolo.
-  QAM presenta alta sensibilidad, especialmente en constelaciones densas (16-QAM, 64-QAM). QAM de baja orden (4-QAM, 8-QAM) tolera más ruido, al igual que sucede con el caso del efecto doppler.
+- *Bandas de Uso Libre Sub-GHz:* Similar a las bandas ISM, son de uso libre y están repletas de dispositivos de bajo consumo como mandos a distancia, sensores de temperatura, abrepuertas de garaje, etc., lo que genera un entorno ruidoso.
+
+**Bandas menos afectadas por Interferencia y Ruido:** Estas bandas son más resistentes porque su propagación es más directa, su uso está estrictamente regulado o operan en frecuencias donde las fuentes naturales de ruido son bajas
+
+- *Bandas de Microondas y Ondas Milimétricas (mmWave):* Su señal es muy direccional. Es menos probable que se interfieran entre sí a menos que se apunten directamente. La señal es absorbida por la lluvia y el oxígeno.
+
+- *Bandas de Fibra Óptica:*  La luz que viaja por una fibra de vidrio es completamente inmune a la Interferencia Electromagnética (IEM). Es el medio de transmisión más puro y libre de ruido que existe. Cualquier interferencia externa (como un campo magnético) no afecta a la señal de luz dentro del cable.
+
+- *Bandas Celulares Licenciadas:* Aunque pueden sufrir interferencia, están mucho mejor protegidas que las bandas ISM. Al ser bandas licenciadas, los operadores pagan por el derecho exclusivo de usarlas en un área geográfica específica. Esto permite una planificación celular cuidadosa para minimizar la auto-interferencia dentro de la misma red y protegerlas de interferencias externas de otros servicios.
+
+- *Bandas VHF para Servicios Críticos:* Son bandas licenciadas y estrictamente reguladas. Cualquier transmisor en estas bandas debe cumplir normas rigurosas y su uso está restringido a aplicaciones vitales, lo que reduce enormemente la cantidad de emisores potenciales que podrían causar interferencia.
 
 El $\text{SNR}$ (Signal-Noise Ratio) Es la relación entre la potencia de la señal útil y la potencia del ruido en un canal de comunicación, se utiliza como medida de la calidad del canal, generalmente se mide en $\text{dB}$ (decibelios)
 
 $$\text{SNR}_{\text{dB}} = 10\cdot\log_{10}{\left( \frac{P_{\text{señal}}}{P_{\text{ruido}}} \right)}$$
 
 El $\text{SNR}$ tiene una relacion directa con el $\text{BER}$, ya que, a mayor de $\text{SNR}$ menor será el $\text{BER}$ y viceversa: a menor $\text{SNR}$ mayor será el $\text{BER}$.
+
+---
+
+### Consigna 3
+
+---
 
 ## Referencias
 
