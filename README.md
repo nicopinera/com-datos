@@ -23,6 +23,13 @@ Este repositorio contiene todos los trabajos prácticos y laboratorios de la mat
 2. Accede a la carpeta del trabajo que deseas consultar.
 3. Sigue las instrucciones específicas de cada trabajo (si las hay).
 
+---
+
+## Herramientas utilizadas
+
+1. Packet Tracer
+2. WireShark
+
 ## Licencia
 
 Este repositorio es solo para fines educativos.
