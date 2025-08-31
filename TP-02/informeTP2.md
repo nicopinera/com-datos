@@ -201,6 +201,33 @@ En este caso la MAC de destino es: 20:9A:7D:AA:E3:D5. La empreza es Sagemcom Bro
 
 ---
 
+## Discusión y conclusiones
+
+El análisis realizado demuestra que la **dirección MAC constituye un identificador único** a nivel de la capa de enlace de datos que permite la trazabilidad de dispositivos dentro de una red local. Si bien proporciona identificación esencial para la comunicación entre dispositivos en una LAN, también representa un **riesgo potencial para la privacidad**, ya que puede ser utilizada para crear perfiles de dispositivos y patrones de comportamiento en redes accesibles al público.
+
+El **IMEI (International Mobile Equipment Identity)** comparte similitudes fundamentales con la dirección MAC en cuanto a su función como identificador único del fabricante. Sin embargo, presentan diferencias cruciales:
+
+- **Ámbito de operación**: Mientras la MAC opera en redes locales (capa 2 del modelo OSI), el IMEI funciona en redes celulares globales.
+- **Alterabilidad**: La dirección MAC puede modificarse mediante software (MAC spoofing), mientras que el IMEI está permanentemente grabado en el hardware del dispositivo móvil
+- **Persistencia**: Ambos identificadores permiten el tracking de dispositivos, pero el IMEI ofrece mayor persistencia al ser inalterable
+
+**Una VPN (Red Privada Virtual) no oculta la dirección MAC del dispositivo**. Este hallazgo es fundamental para entender los límites de la protección que ofrece una VPN:
+
+- Operan en la **capa de red (capa 3)**, mientras la MAC funciona en la **capa de enlace (capa 2)**
+- El **router local y cualquier dispositivo en la misma red** continúan viendo la dirección MAC real
+- Solo proporcionan anonimato a nivel de **dirección IP pública** para comunicaciones externas
+
+Lo que si ofrece una VPN es:
+
+- Encriptación del tráfico de internet
+- Ocultamiento de la IP pública real
+- Protección contra eavesdropping en redes públicas
+- Bypass de restricciones geográficas
+
+La **privacidad digital requiere comprensión de las capas de networking**. Mientras las VPNs proporcionan protección valiosa para el tráfico de internet, no constituyen una solución completa para el anonimato del dispositivo. La **dirección MAC permanece como un identificador vulnerable** en entornos locales, requiriendo medidas adicionales como la randomización de MAC para una protección integral de la privacidad del usuario en todos los niveles de la red.
+
+---
+
 ## Referencias
 
 [1] [How and why the Doppler Effect can impact the quality of wireless communications?](https://www.telecomhall.net/t/how-and-why-the-doppler-effect-can-impact-the-quality-of-wireless-communications/23159)
