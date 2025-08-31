@@ -93,33 +93,33 @@ En la imagen se puede apreciar como el motor de corriente alterna de un taladro 
 
 Características principales de la interferencia por ruido aditivo:
 
-- *Amplio espectro:* Suele afectar una amplia gama de frecuencias (ruido de banda ancha), aunque puede ser también selectivo en frecuencia dependiendo de la fuente.
+- _Amplio espectro:_ Suele afectar una amplia gama de frecuencias (ruido de banda ancha), aunque puede ser también selectivo en frecuencia dependiendo de la fuente.
 
-- *Energía limitada pero superpuesta:* Aunque la energía de cada componente de ruido es pequeña, se suma a la señal deseada, dificultando su detección o decodificación.
+- _Energía limitada pero superpuesta:_ Aunque la energía de cada componente de ruido es pequeña, se suma a la señal deseada, dificultando su detección o decodificación.
 
-- *Origen eléctrico o electromagnético:* Puede provenir de motores, equipos electrónicos, descargas atmosféricas, transmisión de radio cercana, etc.
+- _Origen eléctrico o electromagnético:_ Puede provenir de motores, equipos electrónicos, descargas atmosféricas, transmisión de radio cercana, etc.
 
-- *Impacto en la relación señal/ruido ($\text{SNR}$):* Reduce la $\text{SNR}$, lo que aumenta la probabilidad de errores en sistemas digitales o distorsiona señales analógicas.
+- _Impacto en la relación señal/ruido ($\text{SNR}$):_ Reduce la $\text{SNR}$, lo que aumenta la probabilidad de errores en sistemas digitales o distorsiona señales analógicas.
 
 La vulnerabilidad de las bandas de transmisión a la interferencia electromagnética (IEM) no depende tanto de la banda en sí, sino de una combinación de factores como la frecuencia, la potencia de transmisión, el ancho de banda, la atenuación y, lo más importante, el entorno electromagnético en el que operan.
 
 **Bandas más afectadas por Interferencia:** Estas bandas son propensas porque o bien están muy congestionadas, son utilizadas por dispositivos de baja potencia, o son naturalmente susceptibles a fuentes de ruido omnipresentes.
 
-- *Bandas ISM de 2.4 GHz y 900 MHz:* Son las bandas más afectadas por la interferencia debido a la congestión. Son bandas de uso libre por lo que una enorme cantidad de dispositivos compiten por el mismo espectro.
+- _Bandas ISM de 2.4 GHz y 900 MHz:_ Son las bandas más afectadas por la interferencia debido a la congestión. Son bandas de uso libre por lo que una enorme cantidad de dispositivos compiten por el mismo espectro.
 
-- *Bandas de Frecuencias Medias y Bajas:* Son extremadamente susceptibles al ruido atmosférico (tormentas eléctricas) y al ruido industrial (motores eléctricos, líneas de potencia, sistemas de encendido de vehículos). La propagación por ionosfera también es muy variable e impredecible.
+- _Bandas de Frecuencias Medias y Bajas:_ Son extremadamente susceptibles al ruido atmosférico (tormentas eléctricas) y al ruido industrial (motores eléctricos, líneas de potencia, sistemas de encendido de vehículos). La propagación por ionosfera también es muy variable e impredecible.
 
-- *Bandas de Uso Libre Sub-GHz:* Similar a las bandas ISM, son de uso libre y están repletas de dispositivos de bajo consumo como mandos a distancia, sensores de temperatura, abrepuertas de garaje, etc., lo que genera un entorno ruidoso.
+- _Bandas de Uso Libre Sub-GHz:_ Similar a las bandas ISM, son de uso libre y están repletas de dispositivos de bajo consumo como mandos a distancia, sensores de temperatura, abrepuertas de garaje, etc., lo que genera un entorno ruidoso.
 
 **Bandas menos afectadas por Interferencia y Ruido:** Estas bandas son más resistentes porque su propagación es más directa, su uso está estrictamente regulado o operan en frecuencias donde las fuentes naturales de ruido son bajas
 
-- *Bandas de Microondas y Ondas Milimétricas (mmWave):* Su señal es muy direccional. Es menos probable que se interfieran entre sí a menos que se apunten directamente. La señal es absorbida por la lluvia y el oxígeno.
+- _Bandas de Microondas y Ondas Milimétricas (mmWave):_ Su señal es muy direccional. Es menos probable que se interfieran entre sí a menos que se apunten directamente. La señal es absorbida por la lluvia y el oxígeno.
 
-- *Bandas de Fibra Óptica:*  La luz que viaja por una fibra de vidrio es completamente inmune a la Interferencia Electromagnética (IEM). Es el medio de transmisión más puro y libre de ruido que existe. Cualquier interferencia externa (como un campo magnético) no afecta a la señal de luz dentro del cable.
+- _Bandas de Fibra Óptica:_ La luz que viaja por una fibra de vidrio es completamente inmune a la Interferencia Electromagnética (IEM). Es el medio de transmisión más puro y libre de ruido que existe. Cualquier interferencia externa (como un campo magnético) no afecta a la señal de luz dentro del cable.
 
-- *Bandas Celulares Licenciadas:* Aunque pueden sufrir interferencia, están mucho mejor protegidas que las bandas ISM. Al ser bandas licenciadas, los operadores pagan por el derecho exclusivo de usarlas en un área geográfica específica. Esto permite una planificación celular cuidadosa para minimizar la auto-interferencia dentro de la misma red y protegerlas de interferencias externas de otros servicios.
+- _Bandas Celulares Licenciadas:_ Aunque pueden sufrir interferencia, están mucho mejor protegidas que las bandas ISM. Al ser bandas licenciadas, los operadores pagan por el derecho exclusivo de usarlas en un área geográfica específica. Esto permite una planificación celular cuidadosa para minimizar la auto-interferencia dentro de la misma red y protegerlas de interferencias externas de otros servicios.
 
-- *Bandas VHF para Servicios Críticos:* Son bandas licenciadas y estrictamente reguladas. Cualquier transmisor en estas bandas debe cumplir normas rigurosas y su uso está restringido a aplicaciones vitales, lo que reduce enormemente la cantidad de emisores potenciales que podrían causar interferencia.
+- _Bandas VHF para Servicios Críticos:_ Son bandas licenciadas y estrictamente reguladas. Cualquier transmisor en estas bandas debe cumplir normas rigurosas y su uso está restringido a aplicaciones vitales, lo que reduce enormemente la cantidad de emisores potenciales que podrían causar interferencia.
 
 El $\text{SNR}$ (Signal-Noise Ratio) Es la relación entre la potencia de la señal útil y la potencia del ruido en un canal de comunicación, se utiliza como medida de la calidad del canal, generalmente se mide en $\text{dB}$ (decibelios)
 
@@ -154,19 +154,21 @@ Diferencias entre Ethernet, Fast Ethernet y Gigabit Ethernet
 La principal diferencia entre los protocolos Ethernet, Fast Ethernet y Gigabit Ethernet radica en la velocidad de transmisión de datos, lo cual ha sido la base de la evolución de la tecnología Ethernet a lo largo de las décadas.
 
 - **Ethernet (Estándar Original):**
-  - *Velocidad:* 10 Mbps.
-  - *Medio:* Originalmente utilizaba cable coaxial, pero evolucionó a par trenzado.
-  - *Uso:* Obsoleto en la mayoría de las redes modernas, pero sentó las bases para los estándares posteriores.
+
+  - _Velocidad:_ 10 Mbps.
+  - _Medio:_ Originalmente utilizaba cable coaxial, pero evolucionó a par trenzado.
+  - _Uso:_ Obsoleto en la mayoría de las redes modernas, pero sentó las bases para los estándares posteriores.
 
 - **Fast Ethernet:**
-  - *Velocidad:* 100 Mbps, diez veces más rápido que el estándar original.
-  - *Medio:* Utiliza cable de par trenzado o fibra óptica.
-  - *Uso:* Fue ampliamente adoptado en la década de 1990 y todavía se utiliza en redes donde no se requiere una alta velocidad.
+
+  - _Velocidad:_ 100 Mbps, diez veces más rápido que el estándar original.
+  - _Medio:_ Utiliza cable de par trenzado o fibra óptica.
+  - _Uso:_ Fue ampliamente adoptado en la década de 1990 y todavía se utiliza en redes donde no se requiere una alta velocidad.
 
 - **Gigabit Ethernet:**
-  - *Velocidad:* 1000 Mbps o 1 Gbps, diez veces más rápido que Fast Ethernet.
-  - *Medio:* Utiliza cable de par trenzado de Categoría 5e o superior y fibra óptica.
-  - *Uso:* Es el estándar actual para la mayoría de las redes LAN en hogares, oficinas y centros de datos debido a su alta velocidad y su capacidad para manejar aplicaciones que demandan mucho ancho de banda.
+  - _Velocidad:_ 1000 Mbps o 1 Gbps, diez veces más rápido que Fast Ethernet.
+  - _Medio:_ Utiliza cable de par trenzado de Categoría 5e o superior y fibra óptica.
+  - _Uso:_ Es el estándar actual para la mayoría de las redes LAN en hogares, oficinas y centros de datos debido a su alta velocidad y su capacidad para manejar aplicaciones que demandan mucho ancho de banda.
 
 El cable UTP (Par Trenzado No Apantallado) es el tipo de cable de red más común utilizado en las redes de área local (LAN). Está compuesto por pares de hilos de cobre aislados y entrelazados entre sí. A diferencia de los cables STP (Par Trenzado Apantallado), los cables UTP no tienen un blindaje metálico adicional que proteja los hilos de cobre. Su popularidad se debe a su bajo costo, facilidad de instalación y capacidad para soportar altas velocidades de transmisión de datos.
 
@@ -177,12 +179,25 @@ Cuando una señal viaja por un par de hilos trenzados, las dos señales de cada 
 La diferencia principal entre un cable UTP "derecho" y uno "cruzado" radica en la configuración del cableado interno en los conectores RJ-45 en cada extremo.
 
 - **Cable UTP "Derecho"**:
-  - *Configuración:* Los hilos están en el mismo orden en ambos extremos del cable. El pin 1 de un extremo se conecta al pin 1 del otro, el pin 2 al pin 2, y así sucesivamente.
-  - *Uso:* Se utiliza para conectar dispositivos de diferentes tipos, como un computador a un switch, un router a un switch, o un computador a un hub.
+
+  - _Configuración:_ Los hilos están en el mismo orden en ambos extremos del cable. El pin 1 de un extremo se conecta al pin 1 del otro, el pin 2 al pin 2, y así sucesivamente.
+  - _Uso:_ Se utiliza para conectar dispositivos de diferentes tipos, como un computador a un switch, un router a un switch, o un computador a un hub.
 
 - **Cable UTP "Cruzado"**:
-  - *Configuración:* Los hilos de transmisión de un extremo se conectan a los hilos de recepción del otro, y viceversa. Específicamente, los pares de transmisión del pin 1 y 2 en un extremo se cruzan para conectarse a los pares de recepción del pin 3 y 6 en el otro.
-  - *Uso:* Se utilizaba para conectar dispositivos del mismo tipo directamente, sin un conmutador o concentrador intermedio. Por ejemplo, para conectar un computador a otro computador o un switch a otro switch.
+  - _Configuración:_ Los hilos de transmisión de un extremo se conectan a los hilos de recepción del otro, y viceversa. Específicamente, los pares de transmisión del pin 1 y 2 en un extremo se cruzan para conectarse a los pares de recepción del pin 3 y 6 en el otro.
+  - _Uso:_ Se utilizaba para conectar dispositivos del mismo tipo directamente, sin un conmutador o concentrador intermedio. Por ejemplo, para conectar un computador a otro computador o un switch a otro switch.
+
+A continuacion se puede ver una captura de pantalla del programa Wireshark en la cual se muestran los paquetes recibidos al momento de realizar el comando $ping <ip>$:
+
+![WireShark1](/TP-02/img/wireshark1.png)
+
+Nos damos cuenta que son los paquetes recibidos ya que en la informacion del mismo dice _Echo (ping) request_ para los paquetes enviados y _Echo (ping) reply_ para los paquetes recibidos. Estos paquetes tienen los siguientes datos hexadecimales:
+
+![Informacion Paquete](/TP-02/img/wireshark2.png)
+
+Los primeros 12 valores en hexadecimal son la MAC de destino (nuestra computadora), los segundos 12 valores representan la MAC de origen. El 0800 representa el tipo, en este caso es IPv4, tambien podemos encontrar informacion de la IPv4 de origen y la IPv4 de destino agregado por la capa de red del modelo OSI.
+
+En este caso la MAC de destino es: 20:9A:7D:AA:E3:D5. La empreza es Sagemcom Broadband Sas.
 
 ---
 
