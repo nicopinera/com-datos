@@ -168,6 +168,22 @@ La principal diferencia entre los protocolos Ethernet, Fast Ethernet y Gigabit E
   - *Medio:* Utiliza cable de par trenzado de Categoría 5e o superior y fibra óptica.
   - *Uso:* Es el estándar actual para la mayoría de las redes LAN en hogares, oficinas y centros de datos debido a su alta velocidad y su capacidad para manejar aplicaciones que demandan mucho ancho de banda.
 
+El cable UTP (Par Trenzado No Apantallado) es el tipo de cable de red más común utilizado en las redes de área local (LAN). Está compuesto por pares de hilos de cobre aislados y entrelazados entre sí. A diferencia de los cables STP (Par Trenzado Apantallado), los cables UTP no tienen un blindaje metálico adicional que proteja los hilos de cobre. Su popularidad se debe a su bajo costo, facilidad de instalación y capacidad para soportar altas velocidades de transmisión de datos.
+
+La construcción de un cable UTP está directamente diseñada para mitigar los efectos de la interferencia electromagnética (IEM) y el ruido aditivo. El trenzado de los hilos de cobre en pares es la clave para lograrlo.
+
+Cuando una señal viaja por un par de hilos trenzados, las dos señales de cada hilo son de polaridad opuesta. Cualquier fuente externa de IEM afectará a ambos hilos del par por igual. Sin embargo, debido a que las señales en los hilos son opuestas, la interferencia se cancela mutuamente en el receptor, ya que el receptor solo lee la diferencia de voltaje entre los dos hilos. Este fenómeno se conoce como **cancelación de ruido por par trenzado.** La frecuencia del trenzado, o sea cuántas veces se trenzan los pares por unidad de longitud, varía según la categoría del cable (Cat 5e, Cat 6, etc.). A mayor frecuencia de trenzado, mayor es la capacidad del cable para resistir la interferencia y la diafonía (el ruido generado por los pares adyacentes dentro del mismo cable), permitiendo velocidades de transmisión más altas.
+
+La diferencia principal entre un cable UTP "derecho" y uno "cruzado" radica en la configuración del cableado interno en los conectores RJ-45 en cada extremo.
+
+- **Cable UTP "Derecho"**:
+  - *Configuración:* Los hilos están en el mismo orden en ambos extremos del cable. El pin 1 de un extremo se conecta al pin 1 del otro, el pin 2 al pin 2, y así sucesivamente.
+  - *Uso:* Se utiliza para conectar dispositivos de diferentes tipos, como un computador a un switch, un router a un switch, o un computador a un hub.
+
+- **Cable UTP "Cruzado"**:
+  - *Configuración:* Los hilos de transmisión de un extremo se conectan a los hilos de recepción del otro, y viceversa. Específicamente, los pares de transmisión del pin 1 y 2 en un extremo se cruzan para conectarse a los pares de recepción del pin 3 y 6 en el otro.
+  - *Uso:* Se utilizaba para conectar dispositivos del mismo tipo directamente, sin un conmutador o concentrador intermedio. Por ejemplo, para conectar un computador a otro computador o un switch a otro switch.
+
 ---
 
 ## Referencias
@@ -180,3 +196,5 @@ La principal diferencia entre los protocolos Ethernet, Fast Ethernet y Gigabit E
 in Wireless Communication System](https://www.irejournals.com/formatedpaper/1703100.pdf)
 
 [4] [Theoretical vs. simulated BER vs. SNR for ASK, FSK, and PSK](https://www.salimwireless.com/2023/08/ber-vs-snr-ask-fsk-psk.html)
+
+[5] [Cable UTP](https://es.wikipedia.org/wiki/Cable_de_par_trenzado)
