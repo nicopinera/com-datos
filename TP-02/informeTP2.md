@@ -44,6 +44,12 @@ En este trabajo practico se realiza un repaso de diferentes fenomenos que ocurre
 
 ## Introducción
 
+El presente informe técnico explora conceptos fundamentales en el campo de las Comunicaciones de Datos. Se analizan fenómenos físicos como el efecto Doppler y la interferencia, detallando cómo afectan a las distintas bandas de transmisión.
+
+A nivel de protocolo, se examina el estándar Ethernet, su evolución y su operación en la capa de enlace de datos. Se explican los componentes de las tramas Ethernet y las propiedades del cable UTP, destacando su diseño para mitigar el ruido.
+
+Finalmente, se presenta un análisis práctico con Wireshark para visualizar los paquetes de red, lo que permite una comprensión tangible de la estructura de las tramas y el uso de las direcciones MAC. El trabajo concluye con una discusión sobre la privacidad digital y los alcances y limitaciones de herramientas como las VPNs.
+
 ## Resultados
 
 ### Consigna 1
