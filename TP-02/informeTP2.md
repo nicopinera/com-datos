@@ -36,7 +36,7 @@
 
 ## Resumen
 
-En este trabajo practico se realiza un repaso de diferentes fenomenos que ocurren en las ondas, como el efecto doppler y la interferencia, viendo las caracteristicas principales de ambos fenomenos y como afectan a las diferentes bandas de transmicion. Ademas se ve una explicacion del protocolo Ethernet aplicado en la capa de enlace de datos del modelo OSI y como fue evolucionando.
+En este trabajo practico se realiza un repaso de diferentes fenomenos que ocurren en las ondas, como el efecto doppler y la interferencia, viendo las caracteristicas principales de ambos fenomenos y como afectan a las diferentes bandas de transmisión. Ademas se ve una explicacion del protocolo Ethernet aplicado en la capa de enlace de datos del modelo OSI y como fue evolucionando.
 
 **Palabras clave**: Efecto doppler, interferencia, bandas de transmicion, Ethernet, protocolos, WireShark, MAC.
 
@@ -56,7 +56,7 @@ Finalmente, se presenta un análisis práctico con Wireshark para visualizar los
 
 ![Efecto-Doppler](img/efecto-doppler.png)
 
-En la imagen se puede apreciar el efecto Doppler, el cual se ve representado en elcambio aparente en la frecuencia de la onda.
+En la imagen se puede apreciar el efecto Doppler, el cual se ve representado en el cambio aparente en la frecuencia de la onda.
 El efecto Doppler es el cambio aparente en la frecuencia (o longitud de onda) de una onda cuando existe movimiento relativo entre la fuente emisora y el observador, en este caso entre el barco y el satélite.
 
 Características principales del efecto Doppler:
@@ -67,23 +67,19 @@ Características principales del efecto Doppler:
 
 - La magnitud del efecto depende de la velocidad relativa y de la dirección del movimiento (máximo cuando están en línea recta).
 
-Como vimos en el trabajo anterior, el **espectro electromagnético** es la clasificación completa de toda la radiación electromagnética, organizada por su frecuencia o longitud de onda. Se divide en grandes regiones, que representan clasificaciones científicas para entender las propiedades físicas de las ondas. Las principales regiones son:
+Según la modulación utilizada (ASK, FSK, QPSK, QAM), el efecto Doppler impacta de manera diferente, dependiendo de como se codifica la información:
 
-- **Ondas de radio:** Frecuencias más bajas (longitudes de onda más largas). Utilizadas en radiodifusión, comunicaciones inalámbricas y televisión.
-- **Microondas:** Frecuencias más altas que las ondas de radio. Se usan en hornos de microondas, radares y Wi-Fi.
-- **Infrarrojo:** Asociado con la radiación de calor. Se usa en termografía y mandos a distancia.
-- **Luz visible:** La única región que el ojo humano puede percibir. Cada color corresponde a una frecuencia diferente.
-- **Ultravioleta:** Frecuencias más altas que la luz visible. Responsable de las quemaduras solares.
-- **Rayos X:** Usados en radiografías médicas.
-- **Rayos gamma:** Las frecuencias más altas y con mayor energía. Producidas por fenómenos cósmicos y desintegración nuclear.
+- ASK: Produce un desplazamiento de frecuencia. Aunque la amplitud nominal no cambia, el receptor suele tener filtros pasabanda centrados en la frecuencia esperada. Si la portadora se desplaza, la señal se atenúa al pasar por el filtro, lo que puede confundir la detección de los niveles de amplitud.
+  ASK es muy sensible a Doppler, especialmente en enlaces estrechos y cuerpos con alta velocidad relativa. Incluso unos pocos $kHz$ de desplazamiento pueden causar errores significativos.
 
-A diferencia de las regiones, las **bandas de transmisión** son divisiones más específicas y estrechas dentro de la **región de las ondas de radio y microondas**. Son asignadas y reguladas por organismos internacionales para usos de telecomunicaciones específicos y para evitar interferencias. Algunas bandas de transmicion son la banda FM para radio, las bandas 4G/5G para telefonía móvil, y las bandas de Wi-Fi.
+- FSK: Al desplazar todas las frecuencias, cambia la diferencia entre “0” y “1”. Si el desplazamiento es comparable a la separación de las frecuencias, el receptor puede confundir un bit con otro.\
+  FSK es menos sensible al efecto doppler dado que solo basta con ajustar la separación de las frecuencias que representa los “0” y “1” para mitigar el efecto.
 
-El efecto Doppler, afecta a todas las ondas electromagnéticas. La magnitud del cambio de frecuencia es directamente proporcional a la frecuencia de la onda.
+- QPSK: Causa un desplazamiento de frecuencia, que se traduce en rotación de fase progresiva de la señal recibida. Esto puede mover la constelación de símbolos y causar errores de decodificación si la sincronización de fase no se ajusta.\
+  QPSK es menos sensible que ASK o FSK; los sistemas modernos incluyen PLL o sincronización adaptativa, permitiendo tolerar velocidades moderadas sin degradación significativa.
 
-Las bandas de transmisión más afectadas son las que tienen frecuencias más altas las cuales experimentan el mayor desplazamiento de frecuencia absoluto. Esto es especialmente relevante en aplicaciones donde la velocidad es un factor importante, como en las comunicaciones con satélites en órbita baja o alta velocidad.
-
-Las bandas de transmisión menos afectadas: son las bandas de transmisión con las frecuencias más bajas ya que experimentan un menor desplazamiento de frecuencia absoluto. Este efecto es menos crítico en bandas de radiodifusión de baja frecuencia como AM/FM, aunque sigue estando presente.
+- QAM: Afecta tanto fase como frecuencia efectiva, generando desplazamiento en la constelación compleja. Esto puede causar errores de símbolo porque tanto la amplitud como la fase se interpretan mal.\
+  QAM presenta mucha sensibilidad en constelaciones densas (16-QAM, 64-QAM), esto sucede porque los símbolos están cerca entre sí. Por lo tanto a mayor densidad, menor tolerancia a Doppler.
 
 No, el efecto Doppler no esta relacionado la razón por la que se desaconseja usar celulares en aviones o sin tener activado el modo avión. Las razones son más bien de interferencia y regulación:\
 Los dispositivos electrónicos personales como los celulares pueden emitir señales dentro de la misma banda de frecuencias que los sistemas de comunicación y navegación del avión, produciendo interferencias. Aunque los sistemas modernos están muy protegidos, sigue siendo una precaución.\
