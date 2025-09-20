@@ -39,9 +39,8 @@ jobs:
 
       - name: Check for lint errors and fail if needed
         run: |
-          # Busca en el log si hay líneas que indiquen errores de formato
-          # Si encuentra errores, muestra un mensaje y termina el job con error (exit 1)
-          if grep -qE "^.*\.md:" markdownlint-log.txt; then
+          # Si el archivo markdownlint-log.txt NO está vacío, muestra un mensaje y termina el job con error (exit 1)
+          if [ -s markdownlint-log.txt ]; then
             echo "Se encontraron errores de formato en los archivos Markdown. Revisa el artefacto markdownlint-log.txt para más detalles."
             exit 1
           fi
