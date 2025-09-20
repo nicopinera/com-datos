@@ -1,0 +1,47 @@
+# Este workflow revisa el formato de todos los archivos Markdown (.md) usando markdownlint
+# Se ejecuta automáticamente en cada Pull Request hacia cualquier rama
+
+name: Lint Markdown files
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md" # Solo se activa si hay cambios en archivos .md
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest # Usa una máquina virtual Ubuntu
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        # Descarga el código del repositorio para que el workflow pueda analizarlo
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Instala Node.js versión 20
+        # Node.js es necesario para instalar markdownlint-cli
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+        # Instala la herramienta markdownlint-cli de forma global
+
+      - name: Run markdownlint and save log
+        run: |
+          markdownlint '**/*.md' > markdownlint-log.txt || true
+        # Ejecuta markdownlint y guarda el resultado en un log, aunque haya errores
+
+      - name: Check for lint errors and fail if needed
+        run: |
+          if grep -qE "^.*\.md:" markdownlint-log.txt; then
+            echo "Se encontraron errores de formato en los archivos Markdown. Revisa el artefacto markdownlint-log.txt para más detalles."
+            exit 1
+          fi
+        # Si el log tiene errores, falla el workflow
+
+      - name: Upload markdownlint log
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-log
+          path: markdownlint-log.txt
+        # Sube el log como artefacto descargable
