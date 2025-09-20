@@ -38,6 +38,13 @@ jobs:
           cat markdownlint-log.txt
         # Muestra el contenido del log generado por markdownlint para depuración
 
+      - name: Upload markdownlint log
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-log # Nombre del artefacto que se podrá descargar desde la interfaz de GitHub Actions
+          path: markdownlint-log.txt # Ruta al archivo de log generado
+        # Sube el archivo de log como artefacto descargable para que puedas ver los detalles de los errores
+
       - name: Check for lint errors and fail if needed
         run: |
           # Si el archivo markdownlint-log.txt NO está vacío, muestra un mensaje y termina el job con error (exit 1)
@@ -45,10 +52,3 @@ jobs:
             echo "Se encontraron errores de formato en los archivos Markdown. Revisa el artefacto markdownlint-log.txt para más detalles."
             exit 1
           fi
-
-      - name: Upload markdownlint log
-        uses: actions/upload-artifact@v4
-        with:
-          name: markdownlint-log # Nombre del artefacto que se podrá descargar desde la interfaz de GitHub Actions
-          path: markdownlint-log.txt # Ruta al archivo de log generado
-        # Sube el archivo de log como artefacto descargable para que puedas ver los detalles de los errores
