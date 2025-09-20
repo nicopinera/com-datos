@@ -85,6 +85,40 @@ En resumen se podria decir que la relación es indirecta: Las versiones modernas
 
 ---
 
+### Consigna 2
+
+![Fibra optica monomodo y multimodo](/img/fibra-optica-modos.png)
+
+En el lado izquierdo tenemos la fibra óptica monomodo, la cual está diseñada para que la luz viaje por un solo modo o trayectoria dentro de su núcleo muy delgado, de aproximadamente 8 a 10 micrómetros. Esto le permite transmitir datos a muy largas distancias con un ancho de banda muy alto y con mínima dispersión. \
+Sin embargo, requiere láseres precisos para emitir la luz y su implementación es bastante más costosa, tanto por la fibra como por los equipos asociados. Es la opción que se suele usar en redes troncales y telecomunicaciones de larga distancia.
+
+En lado derecho tenemos la fibra óptica multimodo, que permite que la luz se propague por varios modos simultáneamente gracias a un núcleo más ancho, de entre 50 y 62,5 micrómetros. Esto hace que sea más fácil de fabricar y que funcione con LEDs menos precisos, pero limita la distancia de transmisión y el ancho de banda debido a la dispersión modal. Su implementación es más económica y se utiliza principalmente en redes locales, centros de datos y conexiones de corta distancia.
+
+Nota: Cuando hablamos de “modos” en fibra óptica, nos referimos a las posibles trayectorias o caminos que la luz puede seguir dentro del núcleo de la fibra mientras se propaga.
+
+#### Ley de Snell
+
+Recordando la ley de Snell:
+
+$$n_1 \cdot \sin{\theta_1} = n_2 \cdot \sin{\theta_2}$$
+
+Donde:\
+$n_1,n_2$: Índices de refracción de los dos medios.
+
+$\theta_1$: Ángulo de incidencia de la luz respecto a la normal.
+
+$\theta_2$: Ángulo de refracción dentro del segundo medio.
+
+En la fibra óptica, el núcleo tiene un índice de refracción ligeramente mayor que el revestimiento que lo rodea. Gracias a esto, si la luz entra al núcleo con un ángulo adecuado, en lugar de salir al revestimiento, se refleja completamente dentro del núcleo, fenómeno que se llama reflexión total interna.
+
+Esta relación con la Ley de Snell también explica los distintos modos de transmisión. En una fibra monomodo, el núcleo es tan delgado que solo existe un ángulo que cumple la condición de reflexión total interna, por eso la luz sigue una sola trayectoria. En cambio, en una fibra multimodo, el núcleo más ancho permite que la luz entre en varios ángulos distintos, cada uno cumpliendo la Ley de Snell, generando múltiples trayectorias o modos.
+
+Aunque a primera vista las conexiones inalámbricas y la fibra óptica parecen tecnologías totalmente distintas, en realidad están estrechamente relacionadas. La fibra óptica transmite datos mediante luz guiada (que no es otra cosa que una onda electromagnetica) por un medio físico, mientras que las conexiones inalámbricas lo hacen mediante ondas electromagnéticas que viajan por el aire. En ambos casos, el objetivo es transportar información de un punto a otro, y ambos deben lidiar con la forma en la que se propagan esas ondas para que la señal llegue correctamente.
+
+En la fibra, la luz se mantiene dentro del núcleo gracias a la reflexión total interna, mientras que en el aire las ondas pueden rebotar, refractarse o perderse en obstáculos; aun así, en ambos casos el control de la propagación es clave para la eficiencia de la transmisión. Además, la fibra óptica ofrece un ancho de banda y velocidad mucho mayores que el inalámbrico, lo que hace que muchas redes combinen ambas tecnologías: la fibra actúa como la columna vertebral de la red, transportando grandes volúmenes de datos a alta velocidad, y el acceso inalámbrico permite la conexión flexible y móvil de los usuarios finales.
+
+---
+
 ## Discusión y conclusiones
 
 ---
@@ -95,7 +129,7 @@ En resumen se podria decir que la relación es indirecta: Las versiones modernas
 
 [2] [Copperpod - A Comprehensive Comparison of Wi-Fi 5, 6, and 7](https://www.copperpodip.com/post/demystifying-wi-fi-a-comprehensive-comparison-of-wi-fi-5-6-and-7#:~:text=Conclusi%C3%B3n,y%20capaz%20hasta%20la%20fecha.)
 
-[3] []()
+[3] [Patch Box Blog - Fibra optica monomodo y multimodo](https://patchbox.com/es/blog/monomodo-multimodo-fibra-optica/)
 
 [4] []()
 
