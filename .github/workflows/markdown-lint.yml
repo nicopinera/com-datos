@@ -1,47 +1,50 @@
-# Este workflow revisa el formato de todos los archivos Markdown (.md) usando markdownlint
-# Se ejecuta automáticamente en cada Pull Request hacia cualquier rama
+# Workflow de GitHub Actions para revisar el formato de archivos Markdown (.md) usando markdownlint
+# Se ejecuta automáticamente en cada Pull Request que modifique archivos .md
 
-name: Lint Markdown files
+name: Lint Markdown files # Nombre del workflow que aparecerá en GitHub Actions
 
 on:
   pull_request:
     paths:
-      - "**/*.md" # Solo se activa si hay cambios en archivos .md
+      - "**/*.md" # El workflow solo se ejecuta si en el PR hay cambios en archivos .md
 
 jobs:
   markdown-lint:
-    runs-on: ubuntu-latest # Usa una máquina virtual Ubuntu
+    runs-on: ubuntu-latest # El job se ejecuta en una máquina virtual Ubuntu
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # Descarga el código del repositorio para que el workflow pueda analizarlo
+        # Descarga el código fuente del repositorio en la máquina virtual para poder analizarlo
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # Instala Node.js versión 20
-        # Node.js es necesario para instalar markdownlint-cli
+          node-version: "20" # Especifica la versión de Node.js a instalar
+        # Node.js es necesario porque markdownlint-cli está hecho para Node.js
 
       - name: Install markdownlint-cli
         run: npm install -g markdownlint-cli
-        # Instala la herramienta markdownlint-cli de forma global
+        # Instala la herramienta markdownlint-cli de forma global (disponible en toda la VM)
 
       - name: Run markdownlint and save log
         run: |
+          # Ejecuta markdownlint sobre todos los archivos .md del repositorio
+          # El resultado (errores y advertencias) se guarda en el archivo markdownlint-log.txt
+          # El '|| true' asegura que el workflow continúe aunque se encuentren errores
           markdownlint '**/*.md' > markdownlint-log.txt || true
-        # Ejecuta markdownlint y guarda el resultado en un log, aunque haya errores
 
       - name: Check for lint errors and fail if needed
         run: |
+          # Busca en el log si hay líneas que indiquen errores de formato
+          # Si encuentra errores, muestra un mensaje y termina el job con error (exit 1)
           if grep -qE "^.*\.md:" markdownlint-log.txt; then
             echo "Se encontraron errores de formato en los archivos Markdown. Revisa el artefacto markdownlint-log.txt para más detalles."
             exit 1
           fi
-        # Si el log tiene errores, falla el workflow
 
       - name: Upload markdownlint log
         uses: actions/upload-artifact@v4
         with:
-          name: markdownlint-log
-          path: markdownlint-log.txt
-        # Sube el log como artefacto descargable
+          name: markdownlint-log # Nombre del artefacto que se podrá descargar desde la interfaz de GitHub Actions
+          path: markdownlint-log.txt # Ruta al archivo de log generado
+        # Sube el archivo de log como artefacto descargable para que puedas ver los detalles de los errores
