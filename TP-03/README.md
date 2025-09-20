@@ -58,7 +58,7 @@ El primer estándar 802.11 se aprobó en 1997, con velocidades de apenas 2 Mbps.
 
 #### Determinacion del protocolo usado por la red de la facultad
 
-*Pendiente*
+> *Pendiente*
 
 Si una red Wi-Fi opera con un protocolo que la NIC de la notebook vieja no soporta, el resultado depende de si existe algún estándar en común entre ambos:
 
@@ -70,7 +70,7 @@ La versión del protocolo Wi-Fi no incluye directamente la seguridad de la red, 
 
 En resumen se podria decir que la relación es indirecta: Las versiones modernas del estandar suelen desplegarse junto con sistemas de seguridad más recientes (WPA2, WPA3).
 
-*pendiente revisar la seguridad que tiene la red de la facu*
+> *pendiente revisar la seguridad que tiene la red de la facu*
 
 #### Tabla comparativa de los protocolos mas recientes
 
@@ -130,7 +130,3 @@ En la fibra, la luz se mantiene dentro del núcleo gracias a la reflexión total
 [2] [Copperpod - A Comprehensive Comparison of Wi-Fi 5, 6, and 7](https://www.copperpodip.com/post/demystifying-wi-fi-a-comprehensive-comparison-of-wi-fi-5-6-and-7#:~:text=Conclusi%C3%B3n,y%20capaz%20hasta%20la%20fecha.)
 
 [3] [Patch Box Blog - Fibra optica monomodo y multimodo](https://patchbox.com/es/blog/monomodo-multimodo-fibra-optica/)
-
-[4] []()
-
-[5] []()
