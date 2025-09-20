@@ -28,8 +28,9 @@ jobs:
           # Ejecuta markdownlint desde la raíz del repositorio, usando el archivo de configuración .markdownlint.yml
           # Analiza todos los archivos .md en todas las carpetas y subcarpetas
           # El resultado (errores y advertencias) se guarda en el archivo markdownlint-log.txt
+          # El '2>&1' redirige también los errores (stderr) al archivo de log
           # El '|| true' asegura que el workflow continúe aunque se encuentren errores
-          markdownlint . --config .markdownlint.yml > markdownlint-log.txt || true
+          markdownlint . --config .markdownlint.yml > markdownlint-log.txt 2>&1 || true
 
       - name: Show markdownlint log (debug)
         run: |
