@@ -28,10 +28,11 @@ jobs:
 
       - name: Run markdownlint and save log
         run: |
-          # Ejecuta markdownlint sobre todos los archivos .md del repositorio
+          # Ejecuta markdownlint desde la raíz del repositorio, usando el archivo de configuración .markdownlint.yml
+          # Analiza todos los archivos .md en todas las carpetas y subcarpetas
           # El resultado (errores y advertencias) se guarda en el archivo markdownlint-log.txt
           # El '|| true' asegura que el workflow continúe aunque se encuentren errores
-          markdownlint '**/*.md' > markdownlint-log.txt || true
+          markdownlint . --config .markdownlint.yml > markdownlint-log.txt || true
 
       - name: Check for lint errors and fail if needed
         run: |
