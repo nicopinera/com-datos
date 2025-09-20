@@ -1,0 +1,54 @@
+name: Lint Markdown files # Nombre del workflow que aparecerá en GitHub Actions
+
+on:
+  pull_request:
+    paths:
+      - "**/*.md" # El workflow solo se ejecuta si en el PR hay cambios en archivos .md
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest # El job se ejecuta en una máquina virtual Ubuntu
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        # Descarga el código fuente del repositorio en la máquina virtual para poder analizarlo
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Especifica la versión de Node.js a instalar
+        # Node.js es necesario porque markdownlint-cli está hecho para Node.js
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+        # Instala la herramienta markdownlint-cli de forma global (disponible en toda la VM)
+
+      - name: Run markdownlint and save log
+        run: |
+          # Ejecuta markdownlint desde la raíz del repositorio, usando el archivo de configuración .markdownlint.yml
+          # Analiza todos los archivos .md en todas las carpetas y subcarpetas
+          # El resultado (errores y advertencias) se guarda en el archivo markdownlint-log.txt
+          # El '2>&1' redirige también los errores (stderr) al archivo de log
+          # El '|| true' asegura que el workflow continúe aunque se encuentren errores
+          markdownlint . --config .markdownlint.yml > markdownlint-log.txt 2>&1 || true
+
+      - name: Show markdownlint log (debug)
+        run: |
+          echo "Contenido de markdownlint-log.txt:"
+          cat markdownlint-log.txt
+        # Muestra el contenido del log generado por markdownlint para depuración
+
+      - name: Upload markdownlint log
+        uses: actions/upload-artifact@v4
+        with:
+          name: markdownlint-log # Nombre del artefacto que se podrá descargar desde la interfaz de GitHub Actions
+          path: markdownlint-log.txt # Ruta al archivo de log generado
+        # Sube el archivo de log como artefacto descargable para que puedas ver los detalles de los errores
+
+      - name: Check for lint errors and fail if needed
+        run: |
+          # Si el archivo markdownlint-log.txt NO está vacío, muestra un mensaje y termina el job con error (exit 1)
+          if [ -s markdownlint-log.txt ]; then
+            echo "Se encontraron errores de formato en los archivos Markdown. Revisa el artefacto markdownlint-log.txt para más detalles."
+            exit 1
+          fi
