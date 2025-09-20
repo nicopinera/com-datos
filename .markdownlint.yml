@@ -1,0 +1,18 @@
+# Configuración estricta para markdownlint
+# Puedes modificar o agregar reglas según tus necesidades
+
+MD013: # Longitud máxima de línea
+  line_length: 80
+  strict: true
+MD022: true # No permitir múltiples líneas en blanco consecutivas
+MD024: true # No permitir encabezados duplicados
+MD025: true # Solo un encabezado H1 por archivo
+MD029: true # Listas ordenadas deben incrementarse en 1
+MD030: true # Listas sin líneas en blanco entre ítems
+MD031: true # Listas y encabezados sin líneas en blanco extra
+MD032: true # No permitir líneas en blanco al principio del archivo
+MD034: true # No permitir enlaces sin formato
+MD036: true # No permitir encabezados con asteriscos
+MD038: true # No permitir tildes en bloques de código
+MD041: true # El archivo debe comenzar con un encabezado
+MD047: true # No permitir espacios al final de línea
