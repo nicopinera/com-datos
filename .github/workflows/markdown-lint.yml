@@ -1,6 +1,3 @@
-# Workflow de GitHub Actions para revisar el formato de archivos Markdown (.md) usando markdownlint
-# Se ejecuta automáticamente en cada Pull Request que modifique archivos .md
-
 name: Lint Markdown files # Nombre del workflow que aparecerá en GitHub Actions
 
 on:
@@ -33,6 +30,12 @@ jobs:
           # El resultado (errores y advertencias) se guarda en el archivo markdownlint-log.txt
           # El '|| true' asegura que el workflow continúe aunque se encuentren errores
           markdownlint . --config .markdownlint.yml > markdownlint-log.txt || true
+
+      - name: Show markdownlint log (debug)
+        run: |
+          echo "Contenido de markdownlint-log.txt:"
+          cat markdownlint-log.txt
+        # Muestra el contenido del log generado por markdownlint para depuración
 
       - name: Check for lint errors and fail if needed
         run: |
