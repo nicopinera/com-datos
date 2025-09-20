@@ -1,7 +1,7 @@
 # Configuración estricta para markdownlint
 # Puedes modificar o agregar reglas según tus necesidades
 
-MD12: true
+MD012: true
 MD013: # Longitud máxima de línea
   line_length: 80
   strict: true
