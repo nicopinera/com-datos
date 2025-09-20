@@ -2,9 +2,6 @@
 # Puedes modificar o agregar reglas según tus necesidades
 
 MD012: true
-MD013: # Longitud máxima de línea
-  line_length: 80
-  strict: true
 MD022: true # No permitir múltiples líneas en blanco consecutivas
 MD024: true # No permitir encabezados duplicados
 MD025: true # Solo un encabezado H1 por archivo

@@ -1,86 +1,112 @@
-# Comandos de git
+# Comandos Utiles
+
+## Cómo instalar y ejecutar markdownlint
+
+Para asegurarte de que tus archivos Markdown cumplen con las reglas de formato del repositorio, puedes usar markdownlint:
+
+1. Instala markdownlint-cli de forma global:
+
+   ```bash
+   npm install -g markdownlint-cli
+   ```
+
+2. Para corregir automáticamente los errores básicos de formato en todos los archivos `.md`:
+
+   ```bash
+   markdownlint --fix "**/*.md"
+   ```
+
+3. Para solo ver los errores sin corregir:
+
+   ```bash
+   markdownlint "**/*.md"
+   ```
+
+Esto te ayudará a mantener el formato consistente y evitar errores en los workflows de CI.
+
+## Comandos de git
 
 A continuacion se listaran los comandos mas utiles y comunes para trabajar con git y github
 
 1. Agregar elementos o archivos creados. El punto significa que sea agregaran todos los elementos creados, si se desea agregar uno solo se cambia el punto por el nombre del archivo
 
-```bash
-git add .
-```
+   ```bash
+   git add .
+   ```
 
 2. Realizar un commit: sirve para agregar tu contenido con un mensaje descriptivo de la tarea realizada
 
-```bash
-git commit -m "Actualizacion TP1"
-```
+   ```bash
+   git commit -m "Actualizacion TP1"
+   ```
 
 3. Ver el estado de los archivos en el repositorio: muestra los cambios realizados y los archivos que están listos para ser añadidos o confirmados
 
-```bash
-git status
-```
+   ```bash
+   git status
+   ```
 
 4. Ver el historial de commits: muestra una lista de los commits realizados en el repositorio
 
-```bash
-git log
-```
+   ```bash
+   git log
+   ```
 
 5. Clonar un repositorio: copia un repositorio remoto a tu máquina local
 
-```bash
-git clone <url-del-repositorio>
-```
+   ```bash
+   git clone <url-del-repositorio>
+   ```
 
 6. Actualizar el repositorio local con los cambios del repositorio remoto
 
-```bash
-git pull
-```
+   ```bash
+   git pull
+   ```
 
 7. Subir los cambios locales al repositorio remoto
 
-```bash
-git push
-```
+   ```bash
+   git push
+   ```
 
 ## Comandos para trabajar con ramas
 
 1. Crear una nueva rama
 
-```bash
-git branch <nombre-de-la-rama>
-```
+   ```bash
+   git branch <nombre-de-la-rama>
+   ```
 
 2. Cambiar a una rama existente
 
-```bash
-git checkout <nombre-de-la-rama>
-```
+   ```bash
+   git checkout <nombre-de-la-rama>
+   ```
 
 3. Crear y cambiar a una nueva rama en un solo paso
 
-```bash
-git checkout -b <nombre-de-la-rama>
-```
+   ```bash
+   git checkout -b <nombre-de-la-rama>
+   ```
 
 4. Listar todas las ramas
 
-```bash
-git branch
-```
+   ```bash
+   git branch
+   ```
 
 5. Fusionar una rama con la rama actual
 
-```bash
-git merge <nombre-de-la-rama>
-```
+   ```bash
+   git merge <nombre-de-la-rama>
+   ```
 
 6. Eliminar una rama
 
-```bash
-git branch -d <nombre-de-la-rama>
-```
+   ```bash
+   git branch -d <nombre-de-la-rama>
+   ```
 
 ## ¿Qué pasa cuando realizamos un push desde una rama?
 
@@ -115,6 +141,7 @@ Cuando una pull request se fusiona y la rama asociada se elimina en GitHub, es i
    ```
 
 3. Actualizar las referencias remotas para eliminar las ramas que ya no existen en el remoto:
+
    ```bash
    git fetch --prune
    ```
@@ -142,6 +169,7 @@ Cuando dos ramas tienen cambios en las mismas líneas de un archivo, Git genera 
    ```
 
 5. Finaliza el merge con un commit:
+
    ```bash
    git commit
    ```
@@ -187,6 +215,7 @@ Las etiquetas se utilizan para marcar puntos específicos en el historial de com
    ```
 
 7. Eliminar una etiqueta en el remoto:
+
    ```bash
    git push origin --delete <nombre-de-la-etiqueta>
    ```
