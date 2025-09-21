@@ -9,7 +9,7 @@ prácticos y laboratorios de la materia **Comunicaciones de Datos**.
 
 - Krede Julian
 - Piñera Nicolas
-- Noelia
+- Noelia Valarezo
 
 ## Estructura del repositorio
 
