@@ -153,6 +153,10 @@ A continuacion se realizara un cuadro con informacion de los estandares mas comu
 | SigFox    | No                        | -                                                 |
 | Z-Wave    | No                        | -                                                 |
 
+El siguiente gráfico muestra la relación entre **distancia** y **data rate** de distintos protocolos:
+
+![Gráfico Protocolos](grafico_protocolos.png)
+
 De acuerdo con lo visto en clase, se completara el siguiente cuadro comparativo entre los distintos medios de transmision
 
 | Caracteristica                           | UTP        | Fibra Optica | Wi-Fi 802.11be | Bluetooth 5.4 | 5g           |
