@@ -131,6 +131,24 @@ Aunque a primera vista las conexiones inalámbricas y la fibra óptica parecen t
 
 En la fibra, la luz se mantiene dentro del núcleo gracias a la reflexión total interna, mientras que en el aire las ondas pueden rebotar, refractarse o perderse en obstáculos; aun así, en ambos casos el control de la propagación es clave para la eficiencia de la transmisión. Además, la fibra óptica ofrece un ancho de banda y velocidad mucho mayores que el inalámbrico, lo que hace que muchas redes combinen ambas tecnologías: la fibra actúa como la columna vertebral de la red, transportando grandes volúmenes de datos a alta velocidad, y el acceso inalámbrico permite la conexión flexible y móvil de los usuarios finales.
 
+### Consigna 3
+
+A continuacion se realizara un cuadro con informacion de los estandares mas comunes
+
+|Protocolo|Esta estandarizado? Si/No|Si corresponde: ¿Cual(es) Estandares? Mas Moderno|
+|------------------------|---------------|----------------|
+|Wi-Fi|Si|802.11be (Wi-Fi 7)|
+|Bluetooth|Si|Bluetooth 5.4|
+|ZigBee|SI|ZigBee PRO 2023|
+|NFC|Si|NFC Forum Technical Specification 2023|
+|LTE|Si|LTE-Advanced|
+|GSM|Si|No tiene una versión más moderna|
+|5G (3GPP)|Si|Release 18|
+|LoRa|No|-|
+|NB-IoT|No|-|
+|SigFox|No|-|
+|Z-Wave|No|-|
+
 ---
 
 ## Discusión y conclusiones
