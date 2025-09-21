@@ -155,7 +155,7 @@ A continuacion se realizara un cuadro con informacion de los estandares mas comu
 
 El siguiente gráfico muestra la relación entre **distancia** y **data rate** de distintos protocolos:
 
-![Gráfico Protocolos](grafico_protocolos.png)
+![Gráfico Protocolos](https://github.com/user-attachments/assets/4d92447c-23dd-49a4-900f-870ae0736c3b)
 
 De acuerdo con lo visto en clase, se completara el siguiente cuadro comparativo entre los distintos medios de transmision
 
@@ -179,11 +179,25 @@ Existen dos tecnologías principales que permiten la conexión a Internet en un 
 
 2. **Conexión Aire-Tierra (Air-to-Ground - ATG)**: Este sistema es más común en vuelos continentales o nacionales, donde la ruta está sobre tierra firme con infraestructura de torres celulares. Funciona de manera similar a una red móvil terrestre. El avión está equipado con antenas en su parte inferior que se comunican con una red de torres de telefonía móvil terrestres optimizadas para enviar una señal ascendente. A medida que el avión se desplaza, se conecta automáticamente a la torre más cercana.
 
----
+Ahora bien, no todo el tráfico generado en el avión utiliza los enlaces externos. La mayoría de los aviones con Wi-Fi también ofrecen sistemas de entretenimiento a bordo, que incluyen películas, música o juegos almacenados en servidores locales dentro de la aeronave.
+
+Estos sistemas permiten que cada pasajero acceda de manera independiente al contenido que desee gracias a un servidor específico, conocido como LRU (Line Replaceable Unit). Este equipo, conectado mediante Ethernet a las pantallas de los asientos, se encarga de gestionar la distribución del contenido. Las películas y series se almacenan en otros LRU equipados con discos duros, y su actualización se realiza en tierra a través de fibra óptica, utilizando dispositivos que cargan el material previamente cifrado por los estudios.
+
+De esta forma, cuando un pasajero reproduce una película o serie, el tráfico se mantiene dentro de la red interna del avión, sin consumir ancho de banda satelital o ATG. En cambio, cuando se envía un correo electrónico o se navega por Internet, los datos deben salir de la aeronave a través de estos enlaces externos, que resultan más limitados y costosos.
+
+Gracias a esto, el entretenimiento a bordo y el acceso a Internet no compiten por recursos, ya que el primero utiliza servidores locales mientras que el segundo depende de la capacidad del enlace satelital o aire-tierra.
 
 ## Discusión y conclusiones
 
----
+El análisis que hemos llevado a cabo en este trabajo nos ayuda a entender cómo los diferentes estándares y tecnologías de la capa de acceso forman la base del ecosistema de redes modernas. Desde Ethernet (IEEE 802.3), que garantiza conexiones cableadas confiables y rápidas, hasta Wi-Fi (IEEE 802.11) y otros protocolos inalámbricos que ofrecen flexibilidad y movilidad, cada uno tiene un papel específico según las necesidades de distancia, ancho de banda, costos y contexto de uso.
+
+Al comparar los medios de transmisión, queda claro que no hay una solución “perfecta”; cada tecnología requiere un equilibrio: la fibra óptica proporciona una gran capacidad y alcance, pero a un costo más alto, mientras que las conexiones inalámbricas ofrecen comodidad, aunque con limitaciones en inmunidad y velocidad.
+
+Además, al revisar protocolos como Bluetooth, ZigBee, LoRa o NB-IoT, se evidencia cómo las comunicaciones se diversifican según casos de uso específicos, desde redes de sensores de bajo consumo hasta sistemas de quinta generación que pueden alcanzar velocidades de varios gigabits.
+
+Un ejemplo actual y relevante de esta convergencia tecnológica se puede ver en la conectividad a bordo de los aviones. Allí, la combinación de enlaces satelitales o aire-tierra con redes locales internas permite ofrecer servicios diferenciados: entretenimiento a bordo a través de servidores locales y acceso a Internet mediante enlaces más limitados y costosos. Este caso ilustra cómo la arquitectura de red se adapta a los recursos disponibles para mejorar la experiencia del usuario.
+
+En resumen, el estudio reafirma que el futuro de las comunicaciones de datos se basará en la complementariedad entre tecnologías cableadas e inalámbricas, donde la fibra óptica seguirá siendo la base de la alta capacidad, y las redes inalámbricas —cada vez más eficientes y seguras— permitirán la movilidad y la expansión de nuevos servicios en cualquier entorno.
 
 ## Referencias
 
@@ -194,3 +208,5 @@ Existen dos tecnologías principales que permiten la conexión a Internet en un 
 [3] [Patch Box Blog - Fibra optica monomodo y multimodo](https://patchbox.com/es/blog/monomodo-multimodo-fibra-optica/)
 
 [4] [Noticia sobre IFC](https://aws.amazon.com/es/blogs/networking-and-content-delivery/satellite-communication-on-aws-thales-cloudifies-in-flight-wifi-service/#:~:text=Descripci%C3%B3n%20general%20del%20Wi%2DFi%20a%20bordo%20de%20Thales&text=El%20sistema%20IFC%20de%20Thales,terrestres%20en%20cada%20ubicaci%C3%B3n%20geogr%C3%A1fica.)
+
+[5] [Comparison of IoT Communication Protocols](https://research.aimultiple.com/iot-communication-protocol/)
