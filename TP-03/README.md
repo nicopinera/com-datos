@@ -68,10 +68,13 @@ El desarrollo del estándar IEEE 802.11 comenzó en 1990 y la primera versión s
 
 El IEEE 802.11 se utiliza para las redes de área local inalámbricas (WLAN). Su principal ventaja es la movilidad, permitiendo que los dispositivos como smartphones, laptops, tablets y dispositivos de IoT se conecten a la red sin necesidad de cables. Es el estándar detrás de la tecnología Wi-Fi que se encuentra en la mayoría de los lugares públicos y privados.
 
-La red Wi-Fi de la facultad (FCEFyN 2.4GHz) utiliza el protocolo IEEE 802.11n, también conocido como Wi-Fi 4. Este estándar opera principalmente en la banda de 2.4 GHz. Puedes verificar el estándar utilizado desde la notebook accediendo a las propiedades de la red Wi-Fi conectada, donde suele aparecer el tipo de protocolo (por ejemplo, 802.11n).
+Como se puede ver en la siguiente imagen, la red Wi-Fi de la facultad (FCEFyN 2.4GHz) utiliza los protocolos IEEE 802.11n (conocido como Wi-Fi 4) e IEEE 802.11v que esta relacionado más de gestión de red, no a la velocidad.
 
-> [!IMPORTANT]
-> Algunas de las redes de nuestra facultad dejaron de ser libres en estos ultimos años
+Para verificar esta informacion mediante un telefono movil utilizamos la aplicación [WiFi Analyzer (open-source)](https://play.google.com/store/apps/details?id=com.vrem.wifianalyzer&hl=es_419)
+
+![Image](img/info_wifi_facultad.jpeg)
+
+---
 
 La capacidad de un dispositivo para conectarse a una red Wi-Fi depende directamente de la compatibilidad entre el estándar inalámbrico utilizado por el punto de acceso (router) y la tarjeta de interfaz de red (NIC) del dispositivo. Si la NIC de un equipo no es compatible con el protocolo de la red, pueden ocurrir dos escenarios principales:
 
@@ -83,7 +86,10 @@ La versión del protocolo Wi-Fi no incluye directamente la seguridad de la red, 
 
 En resumen se podria decir que la relación es indirecta: Las versiones modernas del estandar suelen desplegarse junto con sistemas de seguridad más recientes (WPA2, WPA3).
 
-Los estándares Wi-Fi 802. 11n son compatibles con los protocolos de seguridad más utilizados: WEP, WPA, WPA2 y WPA3. Sin embargo, la protección de una red no está determinada por el estandar WiFi que se implemente sino por el método de encriptación seleccionado en la configuración del enrutador. La red _FCEFyN 2.4GHz_ se considera una red abierta y, por ende, no cuenta con un protocolo de seguridad. En la informacion relacionada a la seguridad nos aparece _Ninguna/Enchanced Open_
+Los estándares Wi-Fi 802. 11n son compatibles con los protocolos de seguridad más utilizados: WEP, WPA, WPA2 y WPA3. Sin embargo, como se mencionó anteriormente, la protección de una red no está determinada por el estandar WiFi que se implemente, sino por el método de encriptación seleccionado en la configuración del enrutador. La red _FCEFyN 2.4GHz_ es una red abierta y, por ende, no cuenta con un protocolo de seguridad. En la informacion relacionada a la seguridad se puede apreciar que dice _[NONE]/[ESS]_.
+
+> [!NOTE]
+> ESS se refiere a Extended Service Set, esto indica que es una red Wi-Fi “normal” de infraestructura, con un punto de acceso (o varios con el mismo SSID), no una red ad-hoc entre dispositivos por ejemplo.
 
 #### Tabla comparativa de los protocolos mas recientes
 
