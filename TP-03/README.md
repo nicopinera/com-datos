@@ -72,7 +72,7 @@ Como se puede ver en la siguiente imagen, la red Wi-Fi de la facultad (FCEFyN 2.
 
 Para verificar esta informacion mediante un telefono movil utilizamos la aplicación [WiFi Analyzer (open-source)](https://play.google.com/store/apps/details?id=com.vrem.wifianalyzer&hl=es_419)
 
-![Image](img/info_wifi_facultad.jpeg)
+![Image](https://github.com/user-attachments/assets/c5a1ca7f-8b3e-445a-8930-9486d52bdb21)
 
 ---
 
