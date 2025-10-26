@@ -67,6 +67,10 @@ En el contexto de las VLAN y del protocolo IEEE 802.1Q, el **tagging (etiquetado
 
 ![Imagen Taggin](https://github.com/user-attachments/assets/a1417003-bfff-41a8-9b4f-455fcac35427)
 
+### Consigna 2
+
+![Red Parte 1](https://github.com/user-attachments/assets/a2e8f9fb-3ad8-459b-926f-d8db64e57c2d)
+
 ---
 
 ## Discusión y conclusiones
