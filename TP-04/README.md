@@ -71,20 +71,22 @@ En el contexto de las VLAN y del protocolo IEEE 802.1Q, el **tagging (etiquetado
 
 ![Red Parte 1](https://github.com/user-attachments/assets/a2e8f9fb-3ad8-459b-926f-d8db64e57c2d)
 
+La Vlan que se usa por defecto es la vlan 1:
+
+![Vlan brief](https://github.com/user-attachments/assets/724b5f9d-b6ef-4929-8a50-4a521d22afa5)
+
+Luego de crear las vlans, asignar la vlan 99 a la ip de management y la PC-A a Laboratorio:
+
+![Vlan e IP](https://github.com/user-attachments/assets/133f8772-0264-42e3-9335-d9c39d3c412c)
+
+Como se puede observar la Vlan99 aparece con el estado `protocol: down` porque no hay trafico ni puertos activos en esa Vlan
+
+![Ping entre compus](https://github.com/user-attachments/assets/f5f57340-8bb1-4dae-a184-664c319c474e)
+
+![Ping entre switches](https://github.com/user-attachments/assets/836c3cfe-0076-46ed-9506-ec4095a193d7)
+
 ---
 
 ## Discusión y conclusiones
 
 ---
-
-## Referencias
-
-[1] [TechTarget - IEEE 802 Wireless Standards Reference](https://www.techtarget.com/searchnetworking/reference/IEEE-802-Wireless-Standards-Fast-Reference)
-
-[2] [Copperpod - A Comprehensive Comparison of Wi-Fi 5, 6, and 7](https://www.copperpodip.com/post/demystifying-wi-fi-a-comprehensive-comparison-of-wi-fi-5-6-and-7#:~:text=Conclusi%C3%B3n,y%20capaz%20hasta%20la%20fecha.)
-
-[3] [Patch Box Blog - Fibra optica monomodo y multimodo](https://patchbox.com/es/blog/monomodo-multimodo-fibra-optica/)
-
-[4] [Noticia sobre IFC](https://aws.amazon.com/es/blogs/networking-and-content-delivery/satellite-communication-on-aws-thales-cloudifies-in-flight-wifi-service/#:~:text=Descripci%C3%B3n%20general%20del%20Wi%2DFi%20a%20bordo%20de%20Thales&text=El%20sistema%20IFC%20de%20Thales,terrestres%20en%20cada%20ubicaci%C3%B3n%20geogr%C3%A1fica.)
-
-[5] [Comparison of IoT Communication Protocols](https://research.aimultiple.com/iot-communication-protocol/)
