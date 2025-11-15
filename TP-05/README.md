@@ -48,6 +48,40 @@
 
 ### Consigna 1
 
+MQTT es un protocolo de mensajería estándar OASIS para el Internet de las cosas (IoT). Está diseñado como un protocolo de mensajería de publicación/suscripción extremadamente ligero, ideal para conectar dispositivos remotos con un código de tamaño reducido y un ancho de banda de red mínimo. En la actualidad, MQTT se utiliza en una amplia variedad de sectores, pero es muy utilizando para conectar dispositivos de IoT, ya que resulta fácil de implementar y puede comunicar datos de manera eficiente.
+
+#### Historia sobre la creacion de MQTT
+
+El protocolo MQTT se inventó en 1999 para su uso en la industria del petróleo y el gas. Los ingenieros necesitaban un protocolo para un ancho de banda mínimo y una pérdida de batería mínima para supervisar los oleoductos vía satélite. Inicialmente, el protocolo se conocía como transporte de telemetría de Message Queue Server debido al producto de IBM MQ Series que admitió por primera vez su fase inicial. En 2010, IBM lanzó MQTT 3.1 como un protocolo gratuito y abierto para que cualquiera pudiera implementarlo, que después, en 2013, se envió al organismo de especificación de la Organización para el Avance de Estándares de Información Estructurada (OASIS) para su mantenimiento. En 2019, OASIS lanzó una versión 5 de MQTT actualizada.
+
+#### Ventajas
+
+- Ligero y eficiente: Este protocolo fue concebido para enlaces satelitales de pago por byte, esto hace que el overhead se vuelve significativo cuando el cuerpo del mensaje es pequeño.
+
+- Escalable: Tiene funciones integradas para admitir la comunicación con una gran cantidad de dispositivos IoT.
+
+- Fiable: Tiene reconexión automática, mantiene estado del cliente y ofrece 3 niveles de QoS que permiten garantizar entrega, incluso bajo mala conectividad.
+
+- Seguro: Permite el cifrado de mensajes y la autenticación de dispositivos y usuarios mediante protocolos de autenticación modernos
+
+- Soportado en varios lenguajes de programacion: Java, Python, C/C++, JavaScript, C# y PHP
+
+#### Desventajas
+
+- Modelo PUB/SUB rígido: No permite configuraciones mesh o peer-to-peer.
+
+- Dependencia total de un nodo central (broker):
+  - No existe la comunicacion cliente-cliente
+  - Unico punto de fallo, si el broker cae, todo el sistema se detiene.
+
+- No tiene descubrimiento automático ni negociación de capacidades: Todo debe configurarse manualmente o vía otra capa.
+
+#### Patron de arquitectura Pub/Sub
+
+El modelo Publish/Subscribe (Pub/Sub) es un patron de arquitectura en el cual los componentes que producen información (publishers) y los que la consumen (subscribers) están desacoplados entre sí por medio de un componente (Broker) que actúa como intermediario. La responsabilidad del broker es recibir los mensajes que publican los publishers, clasificarlos según su tema correspondiente y distribuirlos a todos los receptores interesados en ese tema. Esta intermediación elimina la necesidad de que publishers y subscribers interactuen directamente lo que produce un desacoplamiento tanto espacial, como temporal
+
+![Modelo pub/sub](https://github.com/user-attachments/assets/edcc88ec-f5a9-47ea-81aa-fc8cfd7d0adb)
+
 ---
 
 ### Consigna 2
@@ -68,12 +102,6 @@
 
 ## Referencias
 
-[1] [TechTarget - IEEE 802 Wireless Standards Reference](https://www.techtarget.com/searchnetworking/reference/IEEE-802-Wireless-Standards-Fast-Reference)
+[1] [Pagina oficial de MQTT](https://mqtt.org/)
 
-[2] [Copperpod - A Comprehensive Comparison of Wi-Fi 5, 6, and 7](https://www.copperpodip.com/post/demystifying-wi-fi-a-comprehensive-comparison-of-wi-fi-5-6-and-7#:~:text=Conclusi%C3%B3n,y%20capaz%20hasta%20la%20fecha.)
-
-[3] [Patch Box Blog - Fibra optica monomodo y multimodo](https://patchbox.com/es/blog/monomodo-multimodo-fibra-optica/)
-
-[4] [Noticia sobre IFC](https://aws.amazon.com/es/blogs/networking-and-content-delivery/satellite-communication-on-aws-thales-cloudifies-in-flight-wifi-service/#:~:text=Descripci%C3%B3n%20general%20del%20Wi%2DFi%20a%20bordo%20de%20Thales&text=El%20sistema%20IFC%20de%20Thales,terrestres%20en%20cada%20ubicaci%C3%B3n%20geogr%C3%A1fica.)
-
-[5] [Comparison of IoT Communication Protocols](https://research.aimultiple.com/iot-communication-protocol/)
+[1] [AWS Sobre MQTT](https://aws.amazon.com/es/what-is/mqtt/)
