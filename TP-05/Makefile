@@ -12,7 +12,11 @@ verificar:
 	sudo service mosquitto status
 
 venv:
-	python3 -m venv $(VENV)
+ifeq ($(OS),Windows_NT) 
+	python -m venv $(VENV) 
+else
+	python3 -m venv $(VENV) 
+endif
 
 # Creacion del entorno virtual e instalacion dependencias
 install_dep: venv
