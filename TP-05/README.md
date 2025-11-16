@@ -96,13 +96,29 @@ Para la realizacion de nustro trabajo practico optamos por usar el broker mosqui
 
 ### Consigna 3
 
+Envio de hola mundo mediante el script `pub_hello_world.py`
+
 ![Envio de datos](https://github.com/user-attachments/assets/a25b0ae8-658a-4b6b-9bba-1c29739c8dc7)
+
+Mediante el comando `mosquitto_sub -t "#" -v` se pueden ver los mensajes de todos los topicos y con la opcion `-v` se configura para que se muestre el topico al cual corresponde cada mensaje
 
 ![Recepcion desde el broker](https://github.com/user-attachments/assets/fa773ccb-5f3e-40db-92e1-079343143778)
 
 ---
 
 ### Consigna 4
+
+Para esta consigna mediante el script `publisher_4a.py` simulamos la obtencion de metricas de temperatura cada 3 segundos, estas metricas son publicados en el topico lan/device/status
+
+![sub de status](https://github.com/user-attachments/assets/10ba27c3-9c2e-4e37-970d-75093173a608)
+
+Luego el subscriber implementado mediante el script `suscriber_4a.py` recibe las metricas y las imprime para que sean visible por pantalla
+
+![pub de status](https://github.com/user-attachments/assets/ab041825-bd4e-4f7d-b278-b22ce9ed94e7)
+
+---
+
+### Consigna 5
 
 ---
 
