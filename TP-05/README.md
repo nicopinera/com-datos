@@ -60,6 +60,8 @@ El protocolo MQTT se inventó en 1999 para su uso en la industria del petróleo 
 
 - Escalable: Tiene funciones integradas para admitir la comunicación con una gran cantidad de dispositivos IoT.
 
+- Soporta TCP/IP: Por lo tanto, puede correr sobre distintos medios físicos o tecnologías de red: Wi-Fi, Ethernet, 4G, 5G, LoRaWAN, etc
+
 - Fiable: Tiene reconexión automática, mantiene estado del cliente y ofrece 3 niveles de QoS que permiten garantizar entrega, incluso bajo mala conectividad.
 
 - Seguro: Permite el cifrado de mensajes y la autenticación de dispositivos y usuarios mediante protocolos de autenticación modernos
@@ -86,9 +88,17 @@ El modelo Publish/Subscribe (Pub/Sub) es un patron de arquitectura en el cual lo
 
 ### Consigna 2
 
+Para la realizacion de nustro trabajo practico optamos por usar el broker mosquitto en python, dado que es de codigo abierto y sencillo de utilizar
+
+![Envio de datos](https://github.com/user-attachments/assets/3ce4e696-bd74-448d-8762-fe9d271a57c8)
+
 ---
 
 ### Consigna 3
+
+![Envio de datos](https://github.com/user-attachments/assets/a25b0ae8-658a-4b6b-9bba-1c29739c8dc7)
+
+![Recepcion desde el broker](https://github.com/user-attachments/assets/fa773ccb-5f3e-40db-92e1-079343143778)
 
 ---
 
