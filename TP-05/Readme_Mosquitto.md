@@ -21,3 +21,14 @@ Los paquetes que usamos son:
 
 - `paho.mqtt`
 - `random`
+
+## Makefile
+
+Se genero un Makefile para que sea mas simple la ejecucion de los comandos e instalaciones
+
+```bash
+cd TP-05
+make install_mosquitto  # Solo una vez
+make verificar          # Verificar estado
+make install_dep        # Instalar dependencias Python
+```
