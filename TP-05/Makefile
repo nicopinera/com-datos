@@ -22,6 +22,9 @@ python:
 terminal_holaMundo:
 	mosquitto_sub -h localhost -t '$(PROGRAMA1)' -v
 
+terminal:
+	mosquitto_sub -t "#" -v
+
 terminal_pub:
 	mosquitto_sub -h localhost -t '$(PROGRAMA2)' -v
 

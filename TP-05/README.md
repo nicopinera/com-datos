@@ -118,6 +118,17 @@ Mediante el comando `mosquitto_sub -t "#" -v` se pueden ver los mensajes de todo
 
 ![Recepcion desde el broker](https://github.com/user-attachments/assets/fa773ccb-5f3e-40db-92e1-079343143778)
 
+Para poder realizar esto de manera simple, se genero un **Makefile** con diferentes steps, que se pueden utilizar en diferentes terminales, los cuales son:
+
+```bash
+make install_mosquitto # Instala el cliente mosquitto
+make start_mosquitto # Inicia el servicio y verifica el estado
+make python # Genera un entorno virtual e instala los requerimientos
+make terminal_holaMundo # Ver mensaje de topico
+make terminal # Ver mensaje de topico
+make terminal_pub # Ver mensaje de topico
+```
+
 ---
 
 ### Consigna 4

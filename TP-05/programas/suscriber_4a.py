@@ -1,21 +1,17 @@
 import paho.mqtt.client as mqtt
+import config as con
 import random
 import time
 
 #Dispositivo B Suscriptor
-# Parametros de coneccion
-broker = "localhost"
-port = 1883
-topic = "lan/deviceA/status"
-ttc = 60 #segundos
 
 #Callback   
 def on_connect(client, userdata, flag, rc):
     if rc == 0:
         print("Conectado al broker mqtt desde mosquitto ")
         print(f"Intentando conectarse al topico...")
-        client.subscribe(topic)
-        print(f"Suscrito a {topic}")
+        client.subscribe(con.TOPIC_DEVA)
+        print(f"Suscrito a {con.TOPIC_DEVA}")
     else:
         print("No se ha podido conectar al broker")
 
@@ -28,6 +24,6 @@ dispositivoA = mqtt.Client()
 dispositivoA.on_connect = on_connect
 dispositivoA.on_message = on_message
 
-dispositivoA.connect(broker, port, ttc)
+dispositivoA.connect(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
 
 dispositivoA.loop_forever()

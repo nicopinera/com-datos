@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import random
 import time
+import config as con
 import datetime
 
 #Dispositivo A
@@ -18,7 +19,7 @@ def on_connect(client, userdata, flag, rc):
 dispositivoA = mqtt.Client()
 dispositivoA.on_connect = on_connect
 
-dispositivoA.connect(broker, port, ttc)
+dispositivoA.connect(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
 
 dispositivoA.loop_start()
 
@@ -31,7 +32,7 @@ try:
         temperatura += random.normalvariate(0.00, 2.00) # Varia la temperatura
         temperatura = round(temperatura, 2)
         payload = str(temperatura)+" °C"
-        dispositivoA.publish(topic, payload)
+        dispositivoA.publish(con.TOPIC_DEVA, payload)
         time.sleep(10.0)
 except KeyboardInterrupt:
     print("Desconectado del broker")
