@@ -5,17 +5,10 @@ import config as con
 import datetime
 
 #Dispositivo A
-# Parametros de coneccion
-broker = "localhost"
-port = 1883
-topic = "lan/deviceA/status"
-ttc = 60 #segundos
-intervalo = 3 #segundos
-
 #Callback   
 def on_connect(client, userdata, flag, rc):
     print("Conectado al broker mqtt desde mosquitto ")
-    
+
 dispositivoA = mqtt.Client()
 dispositivoA.on_connect = on_connect
 

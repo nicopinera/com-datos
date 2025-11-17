@@ -26,4 +26,11 @@ dispositivoA.on_message = on_message
 
 dispositivoA.connect(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
 
-dispositivoA.loop_forever()
+try:
+    #permanecer conectado
+    dispositivoA.loop_forever()
+except KeyboardInterrupt:
+    print("Desconectado del broker")
+    dispositivoA.loop_stop()
+    dispositivoA.disconnect()
+    print("Dispositivo desconectado")

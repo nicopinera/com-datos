@@ -1,6 +1,6 @@
 # Variables
-PROGRAMA1 = comDatos/TPs/TP5
-PROGRAMA2 = lan/deviceA/status
+TOPIC_A = comDatos/TPs/TP5
+TOPIC_B = lan/deviceA/status
 
 # Instalar mosquitto
 install_mosquitto:
@@ -20,12 +20,12 @@ python:
 	python -m pip install -r requerimientos.txt
 
 terminal_holaMundo:
-	mosquitto_sub -h localhost -t '$(PROGRAMA1)' -v
+	mosquitto_sub -h localhost -t '$(TOPIC_A)' -v
 
 terminal:
 	mosquitto_sub -t "#" -v
 
 terminal_pub:
-	mosquitto_sub -h localhost -t '$(PROGRAMA2)' -v
+	mosquitto_sub -h localhost -t '$(TOPIC_B)' -v
 
 .PHONY: install_mosquitto verificar install_dep activate start_mosquitto
