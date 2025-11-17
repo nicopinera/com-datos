@@ -23,5 +23,24 @@ class Publicador:
 
 # Clase Subcriptor
 class Subcriptor:
-    def __init__(self):
-        pass
+    def on_connect(self,client, userdata, flag, rc):
+        print("Conectado al broker mqtt desde mosquitto ")
+        print(f"Intentando conectarse al topico...")
+        client.subscribe(self.topic)
+        print(f"Suscrito a {self.topic}")
+
+    def on_message(self,client, userdata, msg):
+        print(f"Mensaje recibido: {msg.payload.decode()}")
+
+    def __init__(self,topic):
+        self.topic = topic
+        self.cliente = mqtt.Client()
+        self.cliente.on_connect = self.on_connect
+        self.cliente.on_message = self.on_message
+    
+    def conectar(self,broker,port,time):
+        self.cliente.connect(broker,port,time)
+    
+    def desconectar(self):
+        self.cliente.loop_stop()
+        self.cliente.disconnect()

@@ -3,18 +3,13 @@ import random
 import time
 import config as con
 import datetime
+from pub import Publicador
+
 
 #Dispositivo A
-#Callback   
-def on_connect(client, userdata, flag, rc):
-    print("Conectado al broker mqtt desde mosquitto ")
-
-dispositivoA = mqtt.Client()
-dispositivoA.on_connect = on_connect
-
+dispositivoA = Publicador()
 dispositivoA.connect(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
-
-dispositivoA.loop_start()
+dispositivoA.cliente.loop_start()
 
 
 try:
@@ -25,11 +20,10 @@ try:
         temperatura += random.normalvariate(0.00, 2.00) # Varia la temperatura
         temperatura = round(temperatura, 2)
         payload = str(temperatura)+" °C"
-        dispositivoA.publish(con.TOPIC_DEVA, payload)
+        dispositivoA.publicar(con.TOPIC_DEVA,payload)
         time.sleep(10.0)
 except KeyboardInterrupt:
     print("Desconectado del broker")
-    dispositivoA.loop_stop()
-    dispositivoA.disconnect()
+    dispositivoA.desconectar()
     print("Dispositivo desconectado")
 

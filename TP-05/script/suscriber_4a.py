@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import config as con
 import random
 import time
+from pub import Subcriptor
 
 #Dispositivo B Suscriptor
 
@@ -19,18 +20,13 @@ def on_connect(client, userdata, flag, rc):
 def on_message(client, userdata, msg):
     print(f"Mensaje recibido: {msg.payload.decode()}")
     
-
-dispositivoA = mqtt.Client()
-dispositivoA.on_connect = on_connect
-dispositivoA.on_message = on_message
-
-dispositivoA.connect(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
+dispositivoA = Subcriptor(con.TOPIC_DEVA)
+dispositivoA.conectar(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
 
 try:
     #permanecer conectado
-    dispositivoA.loop_forever()
+    dispositivoA.cliente.loop_forever()
 except KeyboardInterrupt:
     print("Desconectado del broker")
-    dispositivoA.loop_stop()
-    dispositivoA.disconnect()
+    dispositivoA.desconectar()
     print("Dispositivo desconectado")
