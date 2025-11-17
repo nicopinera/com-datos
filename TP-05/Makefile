@@ -1,10 +1,6 @@
 # Variables
-VENV = venv
-ACTIVATE = . $(VENV)/bin/activate
-ACTIVATE_W = $(VENV)\Scripts\activate
-PROGRAMA1 = ./programas/pub_hello_world.py
-PROGRAMA2 = ./programas/publisher_4a.py
-PROGRAMA3 = ./programas/suscriber_4a.py
+PROGRAMA1 = comDatos/TPs/TP5
+PROGRAMA2 = lan/deviceA/status
 
 # Instalar mosquitto
 install_mosquitto:
@@ -12,33 +8,21 @@ install_mosquitto:
 	sudo apt-get install mosquitto mosquitto-clients
 
 # Comprobar funcionamiento, depende de estar instalado
-verificar:
+start_mosquitto:
+	sudo service mosquitto start;\
 	sudo service mosquitto status
 
-venv:
-ifeq ($(OS),Windows_NT) 
-	python -m venv $(VENV) 
-else
-	python3 -m venv $(VENV) 
-endif
+python:
+	cd TP-05;\
+	python3 -m venv venv;\
+	. venv/bin/activate;\
+	python -m pip install --upgrade pip;\
+	python -m pip install -r requerimientos.txt
 
-# Creacion del entorno virtual e instalacion dependencias
-install_dep: venv
-ifeq ($(OS),Windows_NT) 
-	$(ACTIVATE_W) &&  python.exe -m pip install --upgrade pip && pip install -r requerimientos.txt
-else
-	$(ACTIVATE) && pip install -r requerimientos.txt
-endif
+terminal_holaMundo:
+	mosquitto_sub -h localhost -t '$(PROGRAMA1)' -v
 
-act_venv:
-ifeq ($(OS),Windows_NT) 
-	$(ACTIVATE_W) && python.exe $(PROGRAMA1) && python.exe $(PROGRAMA2) && python.exe $(PROGRAMA3)
-else
-	$(ACTIVATE) && python.exe $(PROGRAMA1) && python.exe $(PROGRAMA2) && python.exe $(PROGRAMA3)
-endif
-
-# Iniciar mosquitto
-start_mosquitto:
-	sudo service mosquitto start
+terminal_pub:
+	mosquitto_sub -h localhost -t '$(PROGRAMA2)' -v
 
 .PHONY: install_mosquitto verificar install_dep activate start_mosquitto
