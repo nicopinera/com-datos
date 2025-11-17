@@ -48,39 +48,53 @@
 
 ### Consigna 1
 
-MQTT es un protocolo de mensajería estándar OASIS para el Internet de las cosas (IoT). Está diseñado como un protocolo de mensajería de publicación/suscripción extremadamente ligero, ideal para conectar dispositivos remotos con un código de tamaño reducido y un ancho de banda de red mínimo. En la actualidad, MQTT se utiliza en una amplia variedad de sectores, pero es muy utilizando para conectar dispositivos de IoT, ya que resulta fácil de implementar y puede comunicar datos de manera eficiente.
+**MQTT (Message Queuing Telemetry Transport)** es un protocolo de mensajería estándar OASIS para el Internet de las cosas (IoT). Está diseñado como un protocolo de mensajería de *publicación/suscripción* extremadamente ligero, ideal para conectar dispositivos remotos de recursos limitados, con un código de tamaño reducido y un ancho de banda de red mínimo. En la actualidad, MQTT se utiliza en una amplia variedad de sectores, pero es muy utilizando para conectar dispositivos de IoT, ya que resulta fácil de implementar y puede comunicar datos de manera eficiente.
 
 #### Historia sobre la creacion de MQTT
 
-El protocolo MQTT se inventó en 1999 para su uso en la industria del petróleo y el gas. Los ingenieros necesitaban un protocolo para un ancho de banda mínimo y una pérdida de batería mínima para supervisar los oleoductos vía satélite. Inicialmente, el protocolo se conocía como transporte de telemetría de Message Queue Server debido al producto de IBM MQ Series que admitió por primera vez su fase inicial. En 2010, IBM lanzó MQTT 3.1 como un protocolo gratuito y abierto para que cualquiera pudiera implementarlo, que después, en 2013, se envió al organismo de especificación de la Organización para el Avance de Estándares de Información Estructurada (OASIS) para su mantenimiento. En 2019, OASIS lanzó una versión 5 de MQTT actualizada.
+El protocolo MQTT se inventó en 1999 para su uso en la industria del petróleo y el gas. Los ingenieros necesitaban un protocolo para un ancho de banda y una pérdida de batería mínima para supervisar los oleoductos vía satélite. Inicialmente, el protocolo se conocía como transporte de telemetría de Message Queue Server debido al producto de IBM MQ Series que admitió por primera vez su fase inicial. En 2010, IBM lanzó MQTT 3.1 como un protocolo gratuito y abierto para que cualquiera pudiera implementarlo, que después, en 2013, se envió al organismo de especificación de la Organización para el Avance de Estándares de Información Estructurada (OASIS) para su mantenimiento. En 2019, OASIS lanzó una versión 5 de MQTT actualizada.
 
 #### Ventajas
 
-- Ligero y eficiente: Este protocolo fue concebido para enlaces satelitales de pago por byte, esto hace que el overhead se vuelve significativo cuando el cuerpo del mensaje es pequeño.
+- *Ligero y eficiente*: Este protocolo fue concebido para enlaces satelitales de pago por byte, esto hace que el overhead se vuelve significativo cuando el cuerpo del mensaje es pequeño, tiene solo 2 bytes fijos.
 
-- Escalable: Tiene funciones integradas para admitir la comunicación con una gran cantidad de dispositivos IoT.
+- *Baja Demanda de Energía*: Su diseño optimizado para transferencias de datos cortas y eficientes permite que los dispositivos operen con menor consumo de energía.
 
-- Soporta TCP/IP: Por lo tanto, puede correr sobre distintos medios físicos o tecnologías de red: Wi-Fi, Ethernet, 4G, 5G, LoRaWAN, etc
+- *Escalable*: Tiene funciones integradas para admitir la comunicación con una gran cantidad de dispositivos IoT.
 
-- Fiable: Tiene reconexión automática, mantiene estado del cliente y ofrece 3 niveles de QoS que permiten garantizar entrega, incluso bajo mala conectividad.
+- *Soporta TCP/IP*: Por lo tanto, puede correr sobre distintos medios físicos o tecnologías de red: Wi-Fi, Ethernet, 4G, 5G, LoRaWAN, etc
 
-- Seguro: Permite el cifrado de mensajes y la autenticación de dispositivos y usuarios mediante protocolos de autenticación modernos
+- *Fiable*: Tiene reconexión automática, mantiene estado del cliente y ofrece 3 niveles de QoS que permiten garantizar entrega, incluso bajo mala conectividad.
 
-- Soportado en varios lenguajes de programacion: Java, Python, C/C++, JavaScript, C# y PHP
+- *Calidad de Servicio (QoS)*: Define tres niveles de garantía de entrega de mensajes:
+  - *QoS 0 (Como mucho una vez entrega)*: El mensaje se envía una vez sin confirmación. No hay garantía de llegada. Adecuado si la pérdida de datos es aceptable. Requiere la menor cantidad de tráfico de red y es perfecto para proyectos de smart-home.
+  - *QoS 1 (Al menos una vez entrega)*: El mensaje se garantiza que llega al menos una vez. Se utiliza si la entrega de mensajes necesita ser garantizada, pero se permiten duplicados.
+  - *QoS 2 (Exactamente una vez entrega)*: El mensaje se garantiza que llega exactamente una vez (el nivel más seguro, pero más lento).
+
+- *Seguro*: Permite el cifrado de mensajes y la autenticación de dispositivos y usuarios mediante protocolos de autenticación modernos
+
+- *Soportado en varios lenguajes de programacion*: Java, Python, C/C++, JavaScript, C# y PHP
 
 #### Desventajas
 
-- Modelo PUB/SUB rígido: No permite configuraciones mesh o peer-to-peer.
+- *Modelo PUB/SUB rígido*: No permite configuraciones mesh o peer-to-peer.
 
-- Dependencia total de un nodo central (broker):
+- *Dependencia total de un nodo central (broker)*:
   - No existe la comunicacion cliente-cliente
   - Unico punto de fallo, si el broker cae, todo el sistema se detiene.
 
-- No tiene descubrimiento automático ni negociación de capacidades: Todo debe configurarse manualmente o vía otra capa.
+- *No tiene descubrimiento automático ni negociación de capacidades*: Todo debe configurarse manualmente o vía otra capa.
+
+#### Principales Usos
+
+- *Internet de las Cosas (IoT)*: Recolección de datos de sensores remotos, control de dispositivos inteligentes.
+- *Sistemas de Telemetría*: Monitoreo remoto de vehículos, maquinaria o procesos industriales (IIoT).
+- *Aplicaciones Móviles*: Notificaciones push y aplicaciones de mensajería que requieren bajo consumo de batería.
+- *Redes con Recursos Limitados*: Comunicaciones por satélite o en áreas con poca cobertura.
 
 #### Patron de arquitectura Pub/Sub
 
-El modelo Publish/Subscribe (Pub/Sub) es un patron de arquitectura en el cual los componentes que producen información (publishers) y los que la consumen (subscribers) están desacoplados entre sí por medio de un componente (Broker) que actúa como intermediario. La responsabilidad del broker es recibir los mensajes que publican los publishers, clasificarlos según su tema correspondiente y distribuirlos a todos los receptores interesados en ese tema. Esta intermediación elimina la necesidad de que publishers y subscribers interactuen directamente lo que produce un desacoplamiento tanto espacial, como temporal
+El modelo **Publish/Subscribe (Pub/Sub)** es un patron de diseño en el cual los componentes que producen información (*publishers*) y los que la consumen (*subscribers*) están desacoplados entre sí por medio de un componente (*Broker*) que actúa como intermediario. La responsabilidad del broker es recibir los mensajes que publican los publishers, clasificarlos según su tema correspondiente y distribuirlos a todos los receptores interesados en ese tema. Esta intermediación elimina la necesidad de que publishers y subscribers interactuen directamente lo que produce un desacoplamiento tanto espacial, como temporal.
 
 ![Modelo pub/sub](https://github.com/user-attachments/assets/edcc88ec-f5a9-47ea-81aa-fc8cfd7d0adb)
 
@@ -130,4 +144,6 @@ Luego el subscriber implementado mediante el script `suscriber_4a.py` recibe las
 
 [1] [Pagina oficial de MQTT](https://mqtt.org/)
 
-[1] [AWS Sobre MQTT](https://aws.amazon.com/es/what-is/mqtt/)
+[2] [AWS Sobre MQTT](https://aws.amazon.com/es/what-is/mqtt/)
+
+[3] [MQTT](https://www.nabto.com/mqtt-protocol-iot/)
