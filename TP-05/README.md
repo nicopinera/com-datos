@@ -133,7 +133,7 @@ make terminal_pub # Ver mensaje de topico
 
 ### Consigna 4
 
-Para esta consigna mediante el script `publisher_4a.py` simulamos la obtencion de metricas de temperatura cada 3 segundos, estas metricas son publicados en el topico lan/device/status
+Para esta consigna diseñamos una clase Publicador y otra Subscriptor. Ademas mediante el script `publisher_4a.py` simulamos la obtencion de metricas de temperatura cada 3 segundos, estas metricas son publicados en el topico *lan/device/status*
 
 ![sub de status](https://github.com/user-attachments/assets/10ba27c3-9c2e-4e37-970d-75093173a608)
 
