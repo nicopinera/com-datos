@@ -6,7 +6,8 @@ class Publicador:
     def on_connect(self,client, userdata, flag, rc):
         print(f"Conectado al broker mqtt desde mosquitto - Cliente{self.nombre}")
     
-    def __init__(self,nombre=None):
+    def __init__(self,topic,nombre=None):
+        self.topic = topic
         if(nombre != None):
             self.nombre = nombre
             self.cliente = mqtt.Client(client_id=nombre)
@@ -19,8 +20,7 @@ class Publicador:
         self.cliente.connect(broker,port,time_to_conect)
         # self.cliente.loop_start()
 
-    def publicar(self,topic,payload):
-        self.topic = topic
+    def publicar(self,payload):
         self.cliente.publish(self.topic,payload)
 
     def desconectar(self):
