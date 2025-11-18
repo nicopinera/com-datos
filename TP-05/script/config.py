@@ -15,3 +15,9 @@ TOPIC_DEVA = "lan/deviceA/status"
 # Topic General para simular broadcast 4-b
 TOPIC_GENERAL = "lan/broadcast/#"
 TOPIC_GENERAL_ALL = "lan/broadcast/all"
+
+# Topic Consigna 5
+TOPIC_1_TEMP = "lan/sala1/sensor/temp"
+TOPIC_1_HUM = "lan/sala1/sensor/hum"
+TOPIC_2_TEMP = "lan/sala2/sensor/temp"
+TOPIC_2_HUM = "lan/sala2/sensor/hum"
