@@ -141,6 +141,11 @@ Luego el subscriber implementado mediante el script `suscriber_4a.py` recibe las
 
 ![pub de status](https://github.com/user-attachments/assets/ab041825-bd4e-4f7d-b278-b22ce9ed94e7)
 
+Para generar un grupo de subscriptores al topic **lan/broadcast/#** utilizamos el script `sub_4b.py` en el cual generamos un array de la clase Subscriptor, a todos los identificamos con un nombre y le pasamos dicho topico. Para la creacion del Publicador se utilizo el script `pub_4b.py` en el cual se crea un unico publicador el cual enviara la informacion al topico
+**lan/broadcast/all**. A continuacion se presenta el resultado obtenido:
+
+![Sub-Pub-4b](https://github.com/user-attachments/assets/f73d1182-eb31-4c96-b83d-11eb91bd6f44)
+
 ---
 
 ### Consigna 5

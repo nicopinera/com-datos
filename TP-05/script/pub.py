@@ -7,7 +7,10 @@ class Publicador:
         print("Conectado al broker mqtt desde mosquitto ")
     
     def __init__(self,nombre=None):
-        self.cliente = mqtt.Client()
+        if(nombre != None):
+            self.cliente = mqtt.Client(client_id=nombre)
+        else:
+            self.cliente = mqtt.Client()
         self.cliente.on_connect = self.on_connect
     
     def connect(self,broker,port,time_to_conect):
@@ -30,11 +33,15 @@ class Subcriptor:
         print(f"Suscrito a {self.topic}")
 
     def on_message(self,client, userdata, msg):
-        print(f"Mensaje recibido: {msg.payload.decode()}")
+        print(f"Mensaje recibido: {msg.payload.decode()} - Sub: {self.nombre}")
 
-    def __init__(self,topic):
+    def __init__(self,topic,nombre=None):
         self.topic = topic
-        self.cliente = mqtt.Client()
+        if(nombre != None):
+            self.nombre = nombre
+            self.cliente = mqtt.Client(client_id=nombre)
+        else:
+            self.cliente = mqtt.Client()
         self.cliente.on_connect = self.on_connect
         self.cliente.on_message = self.on_message
     
