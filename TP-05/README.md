@@ -150,6 +150,48 @@ Para generar un grupo de subscriptores al topic **lan/broadcast/#** utilizamos e
 
 ### Consigna 5
 
+Para esta consigna, en el script `pub_5.py` simulamos un grupo de 4 sensores (2 de temperatura y 2 de humedad), los cuales cada 1 segundo generan un valor aleatorio de la misma cantidad sensada, y lo publican en el broker, cada uno tiene si determinado **topic**. Dentro del mismo script se genera una funcion `on_message` para asignare al suscriptor del **topic** para los comandos enviados. Se termina de generar una lista para los publicadores disponibles, utilizando la clase creada por nosotros y se le asignan todos los valores necesarios para la coneccion. Por ultimo se crea un subscriptor al **topic: lan/comandos** para recibir los comandos **START** y **STOP** y que se de inicio o se detenga la simulacion de valores respectivamente.
+
+Dentro del script `sub_5.py` definimos la funcion `on_message` para que el subscriptor asociado al **topic: lan/#**, que simula un gateway (recibe todos los datos de los diferentes sensores), genere un archivo `datos_sensores.csv` donde se almacena toda la informacion recibida. Ademas tendremos al publicador de comandos.
+
+A continuacion se presentan dos imagenes, en la primera se ve el funcionamiento de los script y en la segunda el archivo .csv con los datos almacenados
+
+![Ejemplo_uso](https://github.com/user-attachments/assets/01bcf3ff-c98c-4c0b-a262-edc01414e36d)
+
+![Datos_csv](https://github.com/user-attachments/assets/9c0cb5f3-50f1-402d-8a69-9a3212c69b8d)
+
+> [!NOTE]
+> Falta lo del sniffer
+
+El protocolo **MQTT** está diseñado y se implementa fundamentalmente sobre el protocolo **TCP**. TCP, al ser un protocolo orientado a la conexión y fiable, es utilizado por MQTT para garantizar una sesión persistente y una entrega ordenada y verificada de los paquetes entre los clientes y el Broker.
+
+> [!NOTE]
+> Falta respuesta B
+
+Los niveles de Calidad de Servicio (QoS) en MQTT son el mecanismo primario para asegurar la fiabilidad en la entrega de mensajes. Estos niveles definen el grado de garantía de que un mensaje será entregado y recibido por el suscriptor (o el Broker). La elección del nivel de QoS impacta directamente el equilibrio entre la velocidad de la comunicación y la garantía de que los datos de los sensores serán recibidos.
+
+El modelo Pub/Sub ofrece ventajas significativas sobre el modelo tradicional Cliente-Servidor en esta arquitectura de IoT:
+
+- **Desacoplamiento**: Los publicadores y suscriptores están desacoplados en el espacio y el tiempo. Los sensores envían datos a un tópico sin necesidad de conocer la identidad o ubicación de los consumidores.
+
+- **Escalabilidad**: Permite una comunicación uno a muchos eficiente. Un sensor publica un mensaje una sola vez al Broker, y el Broker se encarga de distribuirlo a los suscriptores interesados, minimizando la carga en el dispositivo publicador.
+
+- **Eficiencia**: MQTT es ligero y eficiente en ancho de banda, lo que lo hace ideal para dispositivos con recursos limitados, en contraste con la sobrecarga de cabecera que a menudo tienen los protocolos basados en Cliente-Servidor, como HTTP.
+
+A pesar de su eficiencia para la mensajería, MQTT presenta limitaciones en el contexto de una red LAN completa:
+
+- **Alcance de Protocolo**: MQTT es un protocolo de capa de aplicación para mensajería y no reemplaza los protocolos fundamentales de red de una LAN (como DHCP, DNS o enrutamiento IP), los cuales son necesarios para que la comunicación exista.
+
+- **Dependencia del Broker**: Toda la comunicación entre los dispositivos debe pasar por el Broker central. Una LAN real permite comunicación peer-to-peer directa (sin intermediarios) utilizando protocolos subyacentes como TCP/IP o UDP.
+
+- **Transferencia de Archivos Grandes**: MQTT está optimizado para la transferencia eficiente de mensajes pequeños de telemetría. Para la transferencia de grandes volúmenes de datos o archivos (como actualizaciones de firmware o logs de alta resolución), protocolos como HTTP o FTP suelen ser más adecuados y eficientes.
+
+La dependencia de un Broker central introduce dos implicaciones operativas críticas:
+
+- **Punto Único de Fallo (SPOF)**: La operatividad del Broker es esencial para todo el sistema. Si el Broker deja de funcionar, toda la comunicación se paraliza: los sensores no pueden enviar datos y los comandos de control no pueden ser distribuidos, resultando en una interrupción completa del servicio.
+
+- **Cuello de Botella y Latencia**: A medida que la red escala (aumentando el número de clientes o el volumen de mensajes), el Broker puede convertirse en un cuello de botella de rendimiento. La necesidad de que cada mensaje se procese en el Broker antes de ser reenviado también introduce una pequeña latencia inherente a la comunicación indirecta.
+
 ---
 
 ## Discusión y conclusiones

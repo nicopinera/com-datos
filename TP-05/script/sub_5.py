@@ -7,23 +7,29 @@ import time
 import config as con
 import csv
 
+# Funcion para crear el csv
 def on_message(client, userdata, msg):
     texto = msg.payload.decode() # Valor tomado
+
+    # Ignorar los comandos
     if texto not in con.LISTA_COMANDOS:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S') # Timestamp
         archivo = Path(con.ARCHIVO)
-        escribir_header = not archivo.exists() or archivo.stat().st_size == 0
+        escribir_header = not archivo.exists() or archivo.stat().st_size == 0 # Escribir encabezado del CSV
+
         with open(con.ARCHIVO,con.MODO, newline='') as file:
             escritor = csv.writer(file)
             if escribir_header:
                 escritor.writerow(["timestamp","topic", "dato"])
             escritor.writerow([timestamp,msg.topic, texto])
 
+# Creacion del gateway
 gateway = Subcriptor(con.TOPIC_ALL,nombre="Gateway General")
 gateway.conectar(con.BROKER,con.PORT,con.TIME_TO_CONNECT)
 gateway.cliente.on_message = on_message
 gateway.cliente.loop_start()
 
+# Creacion del publicador de comandos
 pub_comandos = Publicador(con.TOPIC_COMANDOS,"Pub_Comandos")
 pub_comandos.connect(con.BROKER,con.PORT,con.TIME_TO_CONNECT)
 pub_comandos.cliente.loop_start()
