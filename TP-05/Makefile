@@ -5,7 +5,8 @@ TOPIC_B = lan/deviceA/status
 # Instalar mosquitto
 install_mosquitto:
 	sudo apt update;\
-	sudo apt-get install mosquitto mosquitto-clients
+	sudo apt-get install mosquitto mosquitto-clients;\
+	sudo apt install -y python3-tk
 
 # Comprobar funcionamiento, depende de estar instalado
 start_mosquitto:
