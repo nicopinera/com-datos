@@ -23,6 +23,9 @@ TOPIC_2_TEMP = "lan/sala2/sensor/temp"
 TOPIC_2_HUM = "lan/sala2/sensor/hum"
 LISTA_TOPIC_PUB = [TOPIC_1_TEMP,TOPIC_1_HUM,TOPIC_2_TEMP,TOPIC_2_HUM]
 TOPIC_ALL = "lan/#"
+TOPIC_COMANDOS = "lan/comandos"
 
 ARCHIVO = './TP-05/datos/datos_sensores.csv'
 MODO = 'a'
+
+LISTA_COMANDOS = ["START","STOP"]
