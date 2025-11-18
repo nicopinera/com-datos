@@ -24,6 +24,7 @@ def valor_sensores(topic):
             if hum_1 == -1:
                 hum_1 = random.uniform(0, 100)
             hum_1 += random.normalvariate(0, 2)
+            hum_1 = round(hum_1,0)
             carga = str(hum_1)+" %"
         case "lan/sala2/sensor/temp":
             if temp_2 == -1:
@@ -35,6 +36,7 @@ def valor_sensores(topic):
             if hum_2 == -1:
                 hum_2 = random.uniform(0, 100)
             hum_2 += random.normalvariate(0, 2)
+            hum_2 = round(hum_2,0)
             carga = str(hum_2)+" %"
     return carga
 
@@ -59,4 +61,5 @@ try:
 except KeyboardInterrupt:
     for i in range(len(lista_pub)):
         pub_actual = lista_pub[i]
+        print(f"Desconectando: {pub_actual.nombre} - {pub_actual.topic}")
         pub_actual.desconectar()

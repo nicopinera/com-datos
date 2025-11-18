@@ -7,7 +7,7 @@ from pub import Publicador
 
 
 #Dispositivo A
-dispositivoA = Publicador()
+dispositivoA = Publicador(con.TOPIC_DEVA, " Pub_4b")
 dispositivoA.connect(con.BROKER, con.PORT, con.TIME_TO_CONNECT)
 dispositivoA.cliente.loop_start()
 
@@ -20,7 +20,7 @@ try:
         temperatura += random.normalvariate(0.00, 2.00) # Varia la temperatura
         temperatura = round(temperatura, 2)
         payload = str(temperatura)+" °C"
-        dispositivoA.publicar(con.TOPIC_DEVA,payload)
+        dispositivoA.publicar(payload)
         time.sleep(10.0)
 except KeyboardInterrupt:
     print("Desconectado del broker")

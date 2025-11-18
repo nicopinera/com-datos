@@ -6,11 +6,11 @@ from pub import Publicador
 def on_connect(client, userdata, flag, rc):
     print("Conectado al broker mqtt desde mosquitto ")
     mensaje = "Hola mundo bzzzz... bzzzzz... "
-    client.publish(con.TOPIC_PRUEBA, mensaje)
+    client.publish( mensaje)
 
 
 # Creacion del cliente MQTT
-client = Publicador()
+client = Publicador(con.TOPIC_PRUEBA)
 client.connect(con.BROKER,con.PORT,con.TIME_TO_CONNECT)
 
 # Sobrescribir la llamada on_connect

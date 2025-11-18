@@ -4,7 +4,7 @@ import config as con
 # Clase publicador
 class Publicador:
     def on_connect(self,client, userdata, flag, rc):
-        print(f"Conectado al broker mqtt desde mosquitto - Cliente{self.nombre}")
+        print(f"Conectado al broker mqtt desde mosquitto - Cliente {self.nombre}")
     
     def __init__(self,topic,nombre=None):
         self.topic = topic
