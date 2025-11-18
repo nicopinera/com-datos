@@ -36,11 +36,15 @@
 
 ## Resumen
 
-**Palabras clave**:
+En este trabajo práctico se explora el protocolo MQTT, un estándar de mensajería ampliamente utilizado en el Internet de las Cosas (IoT). Se analizan sus características, ventajas, desventajas y aplicaciones principales. Además, se implementan diferentes scripts en Python para simular escenarios de publicación y suscripción, incluyendo la generación de métricas de sensores y su almacenamiento en un archivo CSV. Finalmente, se discuten las limitaciones del protocolo en redes LAN y su dependencia de un Broker central.
+
+**Palabras clave**: MQTT, IoT, Publicación/Suscripción, Broker, Sensores, Redes LAN.
 
 ---
 
 ## Introducción
+
+El protocolo MQTT (Message Queuing Telemetry Transport) es un estándar de mensajería ligero diseñado para dispositivos con recursos limitados y redes con ancho de banda reducido. Su arquitectura basada en el modelo de publicación/suscripción lo hace ideal para aplicaciones IoT, donde la eficiencia y la escalabilidad son esenciales. Este trabajo práctico tiene como objetivo explorar las características del protocolo, implementar casos de uso prácticos y analizar sus ventajas y limitaciones en el contexto de redes locales.
 
 ---
 
@@ -195,6 +199,8 @@ La dependencia de un Broker central introduce dos implicaciones operativas crít
 ---
 
 ## Discusión y conclusiones
+
+El protocolo MQTT se presenta como una solución eficiente y escalable para la comunicación en entornos IoT, gracias a su diseño ligero y su modelo de publicación/suscripción. Sin embargo, su dependencia de un Broker central introduce desafíos como el punto único de fallo y posibles cuellos de botella en redes de gran escala. A pesar de estas limitaciones, MQTT sigue siendo una herramienta poderosa para aplicaciones donde la simplicidad y la eficiencia son prioritarias. En redes LAN, su uso debe complementarse con otros protocolos para cubrir aspectos como la comunicación peer-to-peer y la transferencia de datos de mayor volumen.
 
 ---
 
