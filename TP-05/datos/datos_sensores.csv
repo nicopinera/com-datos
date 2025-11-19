@@ -194,3 +194,11 @@ timestamp,topic,dato
 12:50:55,lan/sala1/sensor/hum,31.0 %
 12:50:55,lan/sala2/sensor/temp,52.77 °C
 12:50:56,lan/sala2/sensor/hum,86.0 %
+12:54:11,lan/sala1/sensor/temp,5.27 °C
+12:54:12,lan/sala1/sensor/hum,34.0 %
+12:54:12,lan/sala2/sensor/temp,49.85 °C
+12:54:13,lan/sala2/sensor/hum,86.0 %
+12:54:14,lan/sala1/sensor/temp,3.98 °C
+12:54:14,lan/sala1/sensor/hum,32.0 %
+12:54:15,lan/sala2/sensor/temp,49.06 °C
+12:54:15,lan/sala2/sensor/hum,86.0 %

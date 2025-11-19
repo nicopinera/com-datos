@@ -19,13 +19,16 @@ def imprimir_datos_db():
     try:
         cursor.execute("SELECT sala, sensor, valor_C FROM datos")
         filas = cursor.fetchall()  # Obtener todas las filas de la consulta
+        # Genera una lista donde cada valor es una tupla con los valores seleccionados
 
         if filas:
-            print("Datos en la base de datos:")
+            print("Graficando Datos obtenidos")
+
+            # Se recorre cada valor en la fila
             for fila in filas:
-                sala = fila[0]
-                sensor = fila[1]
-                valor = fila[2]
+                sala,sensor,valor = fila # Desempaquetado de valores 
+                
+                # Comprobar de donde viene el dato
                 if sala == "sala1" and sensor == "temp":
                     temp_sala1.append(valor)
                 elif sala == "sala1" and sensor == "hum":
@@ -34,7 +37,8 @@ def imprimir_datos_db():
                     temp_sala2.append(valor)
                 elif sala == "sala2" and sensor == "hum":
                     hum_sala2.append(valor)
-                # print(f"Sala: {fila[0]}, Sensor: {fila[1]}, Valor: {fila[2]}")
+            
+            # Generar subplots
             fig, axs = plt.subplots(2, 2, figsize=(10, 8))  # 2 filas, 2 columnas
 
             # Subplot 1: Temperatura Sala 1
@@ -92,8 +96,11 @@ def on_connect(client, userdata, flag, rc):
     client.subscribe(con.TOPIC_ALL)
     print(f"Suscrito a {con.TOPIC_ALL}")
     print("Creando base de datos")
+
+    # Generar conexion
     conexion = sqlite3.connect(con.DB)
     try:
+        # Crear base de datos
         conexion.execute("""
             create table datos (
                          mes integer,
@@ -104,25 +111,28 @@ def on_connect(client, userdata, flag, rc):
                          )
         """)
         print("Se creo la tabla de datos")
-    except sqlite3.OperationalError:
+    except sqlite3.OperationalError: # Si ya existe no la vuelve a crear
         print("La tabla de datos ya existe")
         conexion.close()
 
-# Funcion para crear el csv
+# Funcion para crear el csv y agregar valores a la DB
 def on_message(client, userdata, msg):
     texto = msg.payload.decode() # Valor tomado
     conexion = sqlite3.connect(con.DB) # conexion a la base de datos
 
     # Ignorar los comandos
     if texto not in con.LISTA_COMANDOS:
-        sala,sensor,valor = parceo_string(msg.topic,texto)
+        sala,sensor,valor = parceo_string(msg.topic,texto) # Obtenemos los valores
+
         timestamp = datetime.now().strftime('%H:%M:%S') # Timestamp para el CSV
         timestamp_db = datetime.now().strftime("%m-%d") # Timestamp para la base de datos
         fecha = timestamp_db.split('-')
         mes = int(fecha[0])
         dia = int(fecha[1])
+
         conexion.execute("insert into datos(mes,dia,sala,sensor,valor_C) values (?,?,?,?,?)",(mes,dia,sala,sensor,valor))
         conexion.commit()
+
         archivo = Path(con.ARCHIVO)
         escribir_header = not archivo.exists() or archivo.stat().st_size == 0 # Escribir encabezado del CSV
 
