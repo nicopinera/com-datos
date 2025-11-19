@@ -2,6 +2,7 @@ from pub import Subcriptor
 from pub import Publicador
 from datetime import datetime
 from pathlib import Path
+import matplotlib.pyplot as plt
 import sqlite3
 import paho.mqtt.client as mqtt
 import time
@@ -11,15 +12,62 @@ import csv
 def imprimir_datos_db():
     conexion = sqlite3.connect(con.DB)  # Conectar a la base de datos
     cursor = conexion.cursor()  # Crear un cursor para ejecutar consultas
-
+    temp_sala1 = [] # Guarda los valores de temperatura para la sala 1
+    temp_sala2 = [] # Guarda los valores de temperatura para la sala 2
+    hum_sala1 = [] # Guarda los valores de humedad para la sala 1
+    hum_sala2 = [] # Guarda los valores de humedad para la sala 2
     try:
-        cursor.execute("SELECT * FROM datos")  # Consultar todos los datos de la tabla
+        cursor.execute("SELECT sala, sensor, valor_C FROM datos")
         filas = cursor.fetchall()  # Obtener todas las filas de la consulta
 
         if filas:
             print("Datos en la base de datos:")
             for fila in filas:
-                print(f"Mes: {fila[0]}, Dia: {fila[1]}, Sala: {fila[2]}, Sensor: {fila[3]}, Valor: {fila[4]}")
+                sala = fila[0]
+                sensor = fila[1]
+                valor = fila[2]
+                if sala == "sala1" and sensor == "temp":
+                    temp_sala1.append(valor)
+                elif sala == "sala1" and sensor == "hum":
+                    hum_sala1.append(valor)
+                elif sala == "sala2" and sensor == "temp":
+                    temp_sala2.append(valor)
+                elif sala == "sala2" and sensor == "hum":
+                    hum_sala2.append(valor)
+                # print(f"Sala: {fila[0]}, Sensor: {fila[1]}, Valor: {fila[2]}")
+            fig, axs = plt.subplots(2, 2, figsize=(10, 8))  # 2 filas, 2 columnas
+
+            # Subplot 1: Temperatura Sala 1
+            axs[0, 0].plot(temp_sala1, marker='o', linestyle='-', color='b')
+            axs[0, 0].set_title("Temperatura Sala 1")
+            axs[0, 0].set_xlabel("Medición")
+            axs[0, 0].set_ylabel("Valor [°C]")
+            axs[0, 0].grid()
+
+            # Subplot 2: Humedad Sala 1
+            axs[0, 1].plot(hum_sala1, marker='o', linestyle='-', color='g')
+            axs[0, 1].set_title("Humedad Sala 1")
+            axs[0, 1].set_xlabel("Medición")
+            axs[0, 1].set_ylabel("Valor [%]")
+            axs[0, 1].grid()
+
+            # Subplot 3: Temperatura Sala 2
+            axs[1, 0].plot(temp_sala2, marker='o', linestyle='-', color='r')
+            axs[1, 0].set_title("Temperatura Sala 2")
+            axs[1, 0].set_xlabel("Medición")
+            axs[1, 0].set_ylabel("Valor [°C]")
+            axs[1, 0].grid()
+
+            # Subplot 4: Humedad Sala 2
+            axs[1, 1].plot(hum_sala2, marker='o', linestyle='-', color='m')
+            axs[1, 1].set_title("Humedad Sala 2")
+            axs[1, 1].set_xlabel("Medición")
+            axs[1, 1].set_ylabel("Valor [%]")
+            axs[1, 1].grid()
+
+            # Ajustar el diseño
+            plt.tight_layout()
+            plt.show()
         else:
             print("La base de datos está vacía.")
     except sqlite3.OperationalError as e:
