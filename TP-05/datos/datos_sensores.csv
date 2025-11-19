@@ -1,0 +1,13 @@
+timestamp,topic,dato
+12:11:29,lan/sala1/sensor/temp,1.23 °C
+12:11:30,lan/sala1/sensor/hum,30.0 %
+12:11:30,lan/sala2/sensor/temp,27.44 °C
+12:11:31,lan/sala2/sensor/hum,67.0 %
+12:11:32,lan/sala1/sensor/temp,1.68 °C
+12:11:32,lan/sala1/sensor/hum,29.0 %
+12:11:33,lan/sala2/sensor/temp,27.01 °C
+12:11:33,lan/sala2/sensor/hum,68.0 %
+12:11:34,lan/sala1/sensor/temp,4.84 °C
+12:11:35,lan/sala1/sensor/hum,31.0 %
+12:11:35,lan/sala2/sensor/temp,27.21 °C
+12:11:36,lan/sala2/sensor/hum,70.0 %
