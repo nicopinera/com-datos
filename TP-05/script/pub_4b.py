@@ -4,7 +4,7 @@ import time
 import config as con
 import random
 
-pub = Publicador(nombre="Pub_Ej_4b")
+pub = Publicador(topic=con.TOPIC_GENERAL_ALL,nombre="Pub_Ej_4b")
 pub.connect(con.BROKER,con.PORT,con.TIME_TO_CONNECT)
 pub.cliente.loop_start()
 
@@ -16,7 +16,7 @@ try:
         temperatura += random.normalvariate(0.00, 2.00) # Varia la temperatura
         temperatura = round(temperatura, 2)
         payload = str(temperatura)+" °C"
-        pub.publicar(con.TOPIC_GENERAL_ALL,payload)
+        pub.publicar(payload)
         time.sleep(2)
 except KeyboardInterrupt:
     pub.desconectar()
