@@ -171,13 +171,27 @@ A continuación, se presentan tres imágenes: en la primera se ve el funcionamie
 
 ![Gráfica_datos](https://github.com/user-attachments/assets/eda892ee-9516-4d25-80de-93dfb25977a7)
 
-> [!NOTE]
-> Falta lo del sniffer.
+Como se puede observar en la siguiente captura de pantalla, vemos informacion reelevante en el contenido del paquete capturado, subrayado en azul el tamaño total del paquete MQTT que va dentro del payload del TCP.
+Composicion del paquete MQTT:
 
-El protocolo **MQTT** está diseñado y se implementa fundamentalmente sobre el protocolo **TCP**. TCP, al ser un protocolo orientado a la conexión y fiable, es utilizado por MQTT para garantizar una sesión persistente y una entrega ordenada y verificada de los paquetes entre los clientes y el Broker.
+- Fixed Header(2 Bytes):
 
-> [!NOTE]
-> Falta respuesta B.
+  - Control Header (1 Byte): Dentro de este se encuentra el tipo de mensaje en este caso Publish message y tambien el QoS que en este caso QoS = 0, lo que significa que se envia una sola vez y no se espera confirmacion
+  - Remaining lenght (1 Byte): Indicar exactamente cuántos bytes vienen después del fixed header
+
+- Payload (28 Bytes):
+  
+  - Longitud del topic: Indica cuantos bytes tiene de longitud el topic, en este caso ocupa, 2 bytes
+  - Topic: El nombre del topico, En este caso ocupa 20 bytes
+  - Message: El mensaje en formato ASCII, en este caso 6 bytes
+
+![Gráfica_datos](https://github.com/user-attachments/assets/0bc5d4e0-b6af-4f85-bc6e-56d69be6b4cd)
+
+MQTT se apoya en TCP para asegurar que los datos llegan completos y en el orden correcto. Pero esta integridad es básica, por ejemplo un atacante podría cambiar mensajes sin que MQTT lo detecte, a menos que se cifre el mensaje
+
+Respecto de la confidencialidad depende enteramente del usuario la configuracion de alguna forma de cifrado de la informacion, ya que por defecto no tiene activado ningun servicio. Esta caracteristica depende de la aplicacion o el entorno en el que se vaya a implementar este sistema de comunicacion.
+
+MQTT depende fuertemente de su broker central. Si el broker no está disponible, la red MQTT deja de estar disponible. Aunque el protocolo tiene mecanismos como QoS y sesiones persistentes, la disponibilidad depende casi por completo de la infraestructura que soporte al broker.
 
 Los niveles de Calidad de Servicio (QoS) en MQTT son el mecanismo primario para asegurar la fiabilidad en la entrega de mensajes. Estos niveles definen el grado de garantía de que un mensaje será entregado y recibido por el suscriptor (o el Broker). La elección del nivel de QoS impacta directamente el equilibrio entre la velocidad de la comunicación y la garantía de que los datos de los sensores serán recibidos.
 
