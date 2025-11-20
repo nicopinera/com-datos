@@ -1,9 +1,9 @@
-# Trabajo Practico N5 : Capa de acceso en redes locales, protocolos y fundamentos
+# Trabajo Práctico N°5: Capa de acceso en redes locales, protocolos y fundamentos
 
 ## Nombres
 
-- Nicolas Piñera
-- Julian Krede
+- Nicolás Piñera
+- Julián Krede
 - Noelia Valarezo
 
 **Nombre del grupo**: Puerto1337
@@ -14,7 +14,7 @@
 
 ### Profesores
 
-- Henn, Santiago Martin
+- Henn, Santiago Martín
 
 - Oliva Cuneo, Facundo
 
@@ -52,40 +52,40 @@ El protocolo MQTT (Message Queuing Telemetry Transport) es un estándar de mensa
 
 ### Consigna 1
 
-**MQTT (Message Queuing Telemetry Transport)** es un protocolo de mensajería estándar OASIS para el Internet de las cosas (IoT). Está diseñado como un protocolo de mensajería de *publicación/suscripción* extremadamente ligero, ideal para conectar dispositivos remotos de recursos limitados, con un código de tamaño reducido y un ancho de banda de red mínimo. En la actualidad, MQTT se utiliza en una amplia variedad de sectores, pero es muy utilizando para conectar dispositivos de IoT, ya que resulta fácil de implementar y puede comunicar datos de manera eficiente.
+**MQTT (Message Queuing Telemetry Transport)** es un protocolo de mensajería estándar OASIS para el Internet de las Cosas (IoT). Está diseñado como un protocolo de mensajería de *publicación/suscripción* extremadamente ligero, ideal para conectar dispositivos remotos de recursos limitados, con un código de tamaño reducido y un ancho de banda de red mínimo. En la actualidad, MQTT se utiliza en una amplia variedad de sectores, pero es muy utilizado para conectar dispositivos de IoT, ya que resulta fácil de implementar y puede comunicar datos de manera eficiente.
 
-#### Historia sobre la creacion de MQTT
+#### Historia sobre la creación de MQTT
 
 El protocolo MQTT se inventó en 1999 para su uso en la industria del petróleo y el gas. Los ingenieros necesitaban un protocolo para un ancho de banda y una pérdida de batería mínima para supervisar los oleoductos vía satélite. Inicialmente, el protocolo se conocía como transporte de telemetría de Message Queue Server debido al producto de IBM MQ Series que admitió por primera vez su fase inicial. En 2010, IBM lanzó MQTT 3.1 como un protocolo gratuito y abierto para que cualquiera pudiera implementarlo, que después, en 2013, se envió al organismo de especificación de la Organización para el Avance de Estándares de Información Estructurada (OASIS) para su mantenimiento. En 2019, OASIS lanzó una versión 5 de MQTT actualizada.
 
 #### Ventajas
 
-- *Ligero y eficiente*: Este protocolo fue concebido para enlaces satelitales de pago por byte, esto hace que el overhead se vuelve significativo cuando el cuerpo del mensaje es pequeño, tiene solo 2 bytes fijos.
+- *Ligero y eficiente*: Este protocolo fue concebido para enlaces satelitales de pago por byte, lo que hace que el overhead se vuelva significativo cuando el cuerpo del mensaje es pequeño, ya que tiene solo 2 bytes fijos.
 
-- *Baja Demanda de Energía*: Su diseño optimizado para transferencias de datos cortas y eficientes permite que los dispositivos operen con menor consumo de energía.
+- *Baja demanda de energía*: Su diseño optimizado para transferencias de datos cortas y eficientes permite que los dispositivos operen con menor consumo de energía.
 
 - *Escalable*: Tiene funciones integradas para admitir la comunicación con una gran cantidad de dispositivos IoT.
 
-- *Soporta TCP/IP*: Por lo tanto, puede correr sobre distintos medios físicos o tecnologías de red: Wi-Fi, Ethernet, 4G, 5G, LoRaWAN, etc
+- *Soporta TCP/IP*: Por lo tanto, puede correr sobre distintos medios físicos o tecnologías de red: Wi-Fi, Ethernet, 4G, 5G, LoRaWAN, etc.
 
-- *Fiable*: Tiene reconexión automática, mantiene estado del cliente y ofrece 3 niveles de QoS que permiten garantizar entrega, incluso bajo mala conectividad.
+- *Fiable*: Tiene reconexión automática, mantiene el estado del cliente y ofrece 3 niveles de QoS que permiten garantizar la entrega, incluso bajo mala conectividad.
 
 - *Calidad de Servicio (QoS)*: Define tres niveles de garantía de entrega de mensajes:
   - *QoS 0 (Como mucho una vez entrega)*: El mensaje se envía una vez sin confirmación. No hay garantía de llegada. Adecuado si la pérdida de datos es aceptable. Requiere la menor cantidad de tráfico de red y es perfecto para proyectos de smart-home.
   - *QoS 1 (Al menos una vez entrega)*: El mensaje se garantiza que llega al menos una vez. Se utiliza si la entrega de mensajes necesita ser garantizada, pero se permiten duplicados.
   - *QoS 2 (Exactamente una vez entrega)*: El mensaje se garantiza que llega exactamente una vez (el nivel más seguro, pero más lento).
 
-- *Seguro*: Permite el cifrado de mensajes y la autenticación de dispositivos y usuarios mediante protocolos de autenticación modernos
+- *Seguro*: Permite el cifrado de mensajes y la autenticación de dispositivos y usuarios mediante protocolos de autenticación modernos.
 
-- *Soportado en varios lenguajes de programacion*: Java, Python, C/C++, JavaScript, C# y PHP
+- *Soportado en varios lenguajes de programación*: Java, Python, C/C++, JavaScript, C# y PHP.
 
 #### Desventajas
 
 - *Modelo PUB/SUB rígido*: No permite configuraciones mesh o peer-to-peer.
 
 - *Dependencia total de un nodo central (broker)*:
-  - No existe la comunicacion cliente-cliente
-  - Unico punto de fallo, si el broker cae, todo el sistema se detiene.
+  - No existe la comunicación cliente-cliente.
+  - Único punto de fallo: si el broker cae, todo el sistema se detiene.
 
 - *No tiene descubrimiento automático ni negociación de capacidades*: Todo debe configurarse manualmente o vía otra capa.
 
@@ -96,9 +96,9 @@ El protocolo MQTT se inventó en 1999 para su uso en la industria del petróleo 
 - *Aplicaciones Móviles*: Notificaciones push y aplicaciones de mensajería que requieren bajo consumo de batería.
 - *Redes con Recursos Limitados*: Comunicaciones por satélite o en áreas con poca cobertura.
 
-#### Patron de arquitectura Pub/Sub
+#### Patrón de arquitectura Pub/Sub
 
-El modelo **Publish/Subscribe (Pub/Sub)** es un patron de diseño en el cual los componentes que producen información (*publishers*) y los que la consumen (*subscribers*) están desacoplados entre sí por medio de un componente (*Broker*) que actúa como intermediario. La responsabilidad del broker es recibir los mensajes que publican los publishers, clasificarlos según su tema correspondiente y distribuirlos a todos los receptores interesados en ese tema. Esta intermediación elimina la necesidad de que publishers y subscribers interactuen directamente lo que produce un desacoplamiento tanto espacial, como temporal.
+El modelo **Publish/Subscribe (Pub/Sub)** es un patrón de diseño en el cual los componentes que producen información (*publishers*) y los que la consumen (*subscribers*) están desacoplados entre sí por medio de un componente (*Broker*) que actúa como intermediario. La responsabilidad del broker es recibir los mensajes que publican los publishers, clasificarlos según su tema correspondiente y distribuirlos a todos los receptores interesados en ese tema. Esta intermediación elimina la necesidad de que publishers y subscribers interactúen directamente, lo que produce un desacoplamiento tanto espacial como temporal.
 
 ![Modelo pub/sub](https://github.com/user-attachments/assets/edcc88ec-f5a9-47ea-81aa-fc8cfd7d0adb)
 
@@ -106,47 +106,46 @@ El modelo **Publish/Subscribe (Pub/Sub)** es un patron de diseño en el cual los
 
 ### Consigna 2
 
-Para la realizacion de nustro trabajo practico optamos por usar el broker mosquitto en python, dado que es de codigo abierto y sencillo de utilizar
+Para la realización de nuestro trabajo práctico optamos por usar el broker Mosquitto en Python, dado que es de código abierto y sencillo de utilizar.
 
-![Envio de datos](https://github.com/user-attachments/assets/3ce4e696-bd74-448d-8762-fe9d271a57c8)
+![Envío de datos](https://github.com/user-attachments/assets/3ce4e696-bd74-448d-8762-fe9d271a57c8)
 
 ---
 
 ### Consigna 3
 
-Envio de hola mundo mediante el script `pub_hello_world.py`
+Para empezar, se desarrolló una clase publicador y otra suscriptor para simplificar el desarrollo de la experiencia. La implementación de las clases se encuentra en el script [pub.py](/TP-05/script/pub.py). Luego se envió un mensaje de "Hola Mundo" mediante el script [pub_hello_world.py](/TP-05/script/pub_hello_world.py).
 
-![Envio de datos](https://github.com/user-attachments/assets/a25b0ae8-658a-4b6b-9bba-1c29739c8dc7)
+![Envío de datos](https://github.com/user-attachments/assets/a25b0ae8-658a-4b6b-9bba-1c29739c8dc7)
 
-Mediante el comando `mosquitto_sub -t "#" -v` se pueden ver los mensajes de todos los topicos y con la opcion `-v` se configura para que se muestre el topico al cual corresponde cada mensaje
+Mediante el comando `mosquitto_sub -t "#" -v` se pueden ver los mensajes de todos los tópicos y con la opción `-v` se configura para que se muestre el tópico al cual corresponde cada mensaje.
 
-![Recepcion desde el broker](https://github.com/user-attachments/assets/fa773ccb-5f3e-40db-92e1-079343143778)
+![Recepción desde el broker](https://github.com/user-attachments/assets/fa773ccb-5f3e-40db-92e1-079343143778)
 
-Para poder realizar esto de manera simple, se genero un **Makefile** con diferentes steps, que se pueden utilizar en diferentes terminales, los cuales son:
+Para poder realizar esto de manera simple, se generó un [Makefile](/TP-05/Makefile) con diferentes steps, que se pueden utilizar para instalar el cliente, verificar el estado, e instalar las dependencias de Python. Los comandos útiles son:
 
 ```bash
-make install_mosquitto # Instala el cliente mosquitto
+make install_mosquitto # Instala el cliente Mosquitto
 make start_mosquitto # Inicia el servicio y verifica el estado
 make python # Genera un entorno virtual e instala los requerimientos
-make terminal_holaMundo # Ver mensaje de topico
-make terminal # Ver mensaje de topico
-make terminal_pub # Ver mensaje de topico
+make terminal_holaMundo # Ver mensaje de tópico
+make terminal # Ver mensaje de tópico
+make terminal_pub # Ver mensaje de tópico
 ```
 
 ---
 
 ### Consigna 4
 
-Para esta consigna diseñamos una clase Publicador y otra Subscriptor. Ademas mediante el script `publisher_4a.py` simulamos la obtencion de metricas de temperatura cada 3 segundos, estas metricas son publicados en el topico *lan/device/status*
+Para esta consigna simulamos al publicador en el script [publisher_4a.py](/TP-05/script/publisher_4a.py), el cual es un sensor de temperatura que publica sus datos cada 3 segundos. Estas métricas son publicadas en el tópico *lan/device/status*. Todos los parámetros de configuración se encuentran en [config.py](/TP-05/script/config.py).
 
 ![sub de status](https://github.com/user-attachments/assets/10ba27c3-9c2e-4e37-970d-75093173a608)
 
-Luego el subscriber implementado mediante el script `suscriber_4a.py` recibe las metricas y las imprime para que sean visible por pantalla
+Luego, el suscriptor implementado mediante el script [suscriber_4a.py](/TP-05/script/suscriber_4a.py) recibe las métricas y las imprime para que sean visibles por pantalla.
 
 ![pub de status](https://github.com/user-attachments/assets/ab041825-bd4e-4f7d-b278-b22ce9ed94e7)
 
-Para generar un grupo de subscriptores al topic **lan/broadcast/#** utilizamos el script `sub_4b.py` en el cual generamos un array de la clase Subscriptor, a todos los identificamos con un nombre y le pasamos dicho topico. Para la creacion del Publicador se utilizo el script `pub_4b.py` en el cual se crea un unico publicador el cual enviara la informacion al topico
-**lan/broadcast/all**. A continuacion se presenta el resultado obtenido:
+Para generar un grupo de suscriptores al tópico **lan/broadcast/#** utilizamos el script [sub_4b.py](/TP-05/script/sub_4b.py), en el cual generamos una lista de la clase Subscriptor. A todos los identificamos con un nombre y les pasamos dicho tópico. Para la creación del Publicador se utilizó el script [pub_4b.py](/TP-05/script/pub_4b.py), en el cual se crea un único publicador que enviará la información al tópico **lan/broadcast/all**. A continuación, se presenta el resultado obtenido:
 
 ![Sub-Pub-4b](https://github.com/user-attachments/assets/f73d1182-eb31-4c96-b83d-11eb91bd6f44)
 
@@ -154,23 +153,45 @@ Para generar un grupo de subscriptores al topic **lan/broadcast/#** utilizamos e
 
 ### Consigna 5
 
-Para esta consigna, en el script `pub_5.py` simulamos un grupo de 4 sensores (2 de temperatura y 2 de humedad), los cuales cada 1 segundo generan un valor aleatorio de la misma cantidad sensada, y lo publican en el broker, cada uno tiene si determinado **topic**. Dentro del mismo script se genera una funcion `on_message` para asignare al suscriptor del **topic** para los comandos enviados. Se termina de generar una lista para los publicadores disponibles, utilizando la clase creada por nosotros y se le asignan todos los valores necesarios para la coneccion. Por ultimo se crea un subscriptor al **topic: lan/comandos** para recibir los comandos **START** y **STOP** y que se de inicio o se detenga la simulacion de valores respectivamente.
+Para esta consigna, en el script [pub_5.py](/TP-05/script/pub_5.py) simulamos un grupo de 4 sensores (2 de temperatura y 2 de humedad), los cuales cada 1 segundo generan un valor aleatorio de la cantidad sensada, y lo publican en el broker. Cada uno tiene su determinado **tópico**. Dentro del mismo script se genera una función `on_message` para asignarle al suscriptor del **tópico** destinado a los comandos. Se termina de generar una lista para los publicadores disponibles, se les asignan todos los valores necesarios para la conexión. Por último, se crea un suscriptor al **tópico: lan/comandos** para recibir los comandos **START** y **STOP**, los cuales dan inicio o detienen la simulación respectivamente.
 
-Dentro del script `sub_5.py` definimos la funcion `on_message` para que el subscriptor asociado al **topic: lan/#**, que simula un gateway (recibe todos los datos de los diferentes sensores), genere un archivo `datos_sensores.csv` donde se almacena toda la informacion recibida. Ademas tendremos al publicador de comandos.
+Dentro del script [sub_5.py](/TP-05/script/sub_5.py) generamos:
 
-A continuacion se presentan dos imagenes, en la primera se ve el funcionamiento de los script y en la segunda el archivo .csv con los datos almacenados
+- El gateway: definimos la función `on_connect`, la cual se suscribe al **tópico: lan/#** y genera la base de datos que almacena el mes y día cuando se generó el valor sensado, la sala y el sensor de la misma, y el valor obtenido.
+
+- La función `on_message` para que el suscriptor se conecte a la base de datos y guarde los valores obtenidos con su respectivo formato. Además, genera un archivo .csv. Tanto la base de datos como el archivo .csv están en [datos](/TP-05/datos/).
+
+- La función auxiliar `parceo_string` nos devuelve los valores de la sala, sensor y valor obtenidos en el mensaje. Y la función `imprimir_datos` nos genera un gráfico de los valores obtenidos por los 4 sensores.
+
+A continuación, se presentan tres imágenes: en la primera se ve el funcionamiento de los scripts, en la segunda el archivo .csv con los datos almacenados, y en la última el gráfico obtenido.
 
 ![Ejemplo_uso](https://github.com/user-attachments/assets/01bcf3ff-c98c-4c0b-a262-edc01414e36d)
 
 ![Datos_csv](https://github.com/user-attachments/assets/9c0cb5f3-50f1-402d-8a69-9a3212c69b8d)
 
-> [!NOTE]
-> Falta lo del sniffer
+![Gráfica_datos](https://github.com/user-attachments/assets/eda892ee-9516-4d25-80de-93dfb25977a7)
 
-El protocolo **MQTT** está diseñado y se implementa fundamentalmente sobre el protocolo **TCP**. TCP, al ser un protocolo orientado a la conexión y fiable, es utilizado por MQTT para garantizar una sesión persistente y una entrega ordenada y verificada de los paquetes entre los clientes y el Broker.
+Como se puede observar en la siguiente captura de pantalla, vemos informacion reelevante en el contenido del paquete capturado, subrayado en azul el tamaño total del paquete MQTT que va dentro del payload del TCP.
+Composicion del paquete MQTT:
 
-> [!NOTE]
-> Falta respuesta B
+- Fixed Header(2 Bytes):
+
+  - Control Header (1 Byte): Dentro de este se encuentra el tipo de mensaje en este caso Publish message y tambien el QoS que en este caso QoS = 0, lo que significa que se envia una sola vez y no se espera confirmacion
+  - Remaining lenght (1 Byte): Indicar exactamente cuántos bytes vienen después del fixed header
+
+- Payload (28 Bytes):
+  
+  - Longitud del topic: Indica cuantos bytes tiene de longitud el topic, en este caso ocupa, 2 bytes
+  - Topic: El nombre del topico, En este caso ocupa 20 bytes
+  - Message: El mensaje en formato ASCII, en este caso 6 bytes
+
+![Gráfica_datos](https://github.com/user-attachments/assets/0bc5d4e0-b6af-4f85-bc6e-56d69be6b4cd)
+
+MQTT se apoya en TCP para asegurar que los datos llegan completos y en el orden correcto. Pero esta integridad es básica, por ejemplo un atacante podría cambiar mensajes sin que MQTT lo detecte, a menos que se cifre el mensaje
+
+Respecto de la confidencialidad depende enteramente del usuario la configuracion de alguna forma de cifrado de la informacion, ya que por defecto no tiene activado ningun servicio. Esta caracteristica depende de la aplicacion o el entorno en el que se vaya a implementar este sistema de comunicacion.
+
+MQTT depende fuertemente de su broker central. Si el broker no está disponible, la red MQTT deja de estar disponible. Aunque el protocolo tiene mecanismos como QoS y sesiones persistentes, la disponibilidad depende casi por completo de la infraestructura que soporte al broker.
 
 Los niveles de Calidad de Servicio (QoS) en MQTT son el mecanismo primario para asegurar la fiabilidad en la entrega de mensajes. Estos niveles definen el grado de garantía de que un mensaje será entregado y recibido por el suscriptor (o el Broker). La elección del nivel de QoS impacta directamente el equilibrio entre la velocidad de la comunicación y la garantía de que los datos de los sensores serán recibidos.
 
@@ -206,7 +227,7 @@ El protocolo MQTT se presenta como una solución eficiente y escalable para la c
 
 ## Referencias
 
-[1] [Pagina oficial de MQTT](https://mqtt.org/)
+[1] [Página oficial de MQTT](https://mqtt.org/)
 
 [2] [AWS Sobre MQTT](https://aws.amazon.com/es/what-is/mqtt/)
 
